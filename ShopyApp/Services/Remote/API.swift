@@ -10,11 +10,13 @@ import Foundation
 
 class APIHandler{
     static let ssl = "https://"
-    static let storeURL = "nciost2.myshopify.com"
-    static let accessToken = "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"
-    static let apiKey = "a09e77f5e58e2ec5f00e4d733d60010c"
+    static let storeURL = "ios-q1-new-capital-2023.myshopify.com"
+    static let accessToken = "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"
+    static let apiKey = "9ec35bc5ffc50f6db2fd830b0fd373ac"
     static let apiSecretKey = "dfd0e137695430eb82bc3bc3edbc3a30"
     
+    // https://9ec35bc5ffc50f6db2fd830b0fd373ac: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@
+//    ios-q1-new-capital-2023.myshopify.com/admin/api/2023-01/products.json
 //    static let currencyApiKey = "dY9QLpBRjobREEQ1uh054fpWULwTak3A"
 //    static let currencyApiURL = "api.apilayer.com/currency_data"
     

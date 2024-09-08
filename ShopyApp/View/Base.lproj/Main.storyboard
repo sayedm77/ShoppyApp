@@ -22,7 +22,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="239" id="SKm-Jy-R00"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q1p-dV-lmv">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q1p-dV-lmv">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -76,10 +76,10 @@
                             <color key="tintColor" systemColor="systemPurpleColor"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="heart.fill" catalog="system" id="3hH-jI-uvH">
+                            <barButtonItem title="Item" image="heart" catalog="system" id="3hH-jI-uvH">
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="bag.fill" catalog="system" id="vQn-jA-DxK">
+                            <barButtonItem title="Item" image="bag" catalog="system" id="vQn-jA-DxK">
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -112,18 +112,91 @@
         <!--Category-->
         <scene sceneID="lgP-ZW-AYo">
             <objects>
-                <viewController id="sXc-4y-Yai" sceneMemberID="viewController">
+                <viewController id="sXc-4y-Yai" customClass="CategoriesVC" customModule="ShopyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHM-7i-aVw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtS-oa-bhO">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" systemColor="systemPurpleColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="ShopyApp" id="OzX-zg-LOx">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="cxZ-fc-nGJ">
+                                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="heart" catalog="system" id="pbr-mT-Dxk">
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                            </barButtonItem>
+                                            <barButtonItem image="bag" catalog="system" id="F0F-a8-nZU">
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MAY-lJ-iFC">
+                                <rect key="frame" x="0.0" y="103" width="393" height="32"/>
+                                <segments>
+                                    <segment title="Men"/>
+                                    <segment title="Women"/>
+                                    <segment title="Kids"/>
+                                    <segment title="Sale"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8fl-WJ-dg3">
+                                <rect key="frame" x="0.0" y="173" width="393" height="596"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="596" id="I6f-lz-e4I"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b6N-Es-hX0">
+                                    <size key="itemSize" width="113" height="99"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y07-Lc-7gx">
+                                <rect key="frame" x="0.0" y="134" width="393" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Shoes"/>
+                                    <segment title="Accessories"/>
+                                    <segment title="T-Shirts"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="veS-ro-d1r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="top" secondItem="MAY-lJ-iFC" secondAttribute="bottom" id="1be-Eo-udy"/>
+                            <constraint firstItem="8fl-WJ-dg3" firstAttribute="top" secondItem="Y07-Lc-7gx" secondAttribute="bottom" constant="8" symbolic="YES" id="327-Zf-ytn"/>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="trailing" secondItem="MAY-lJ-iFC" secondAttribute="trailing" id="5Kc-qW-WUD"/>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="trailing" secondItem="gtS-oa-bhO" secondAttribute="trailing" id="60Q-mk-chJ"/>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="leading" secondItem="gtS-oa-bhO" secondAttribute="leading" id="B2H-4f-70Y"/>
+                            <constraint firstItem="8fl-WJ-dg3" firstAttribute="bottom" secondItem="veS-ro-d1r" secondAttribute="bottom" id="MEH-bs-uKj"/>
+                            <constraint firstItem="gtS-oa-bhO" firstAttribute="top" secondItem="veS-ro-d1r" secondAttribute="top" id="OvI-Li-9YQ"/>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="leading" secondItem="MAY-lJ-iFC" secondAttribute="leading" id="RX0-BY-qO8"/>
+                            <constraint firstAttribute="trailing" secondItem="8fl-WJ-dg3" secondAttribute="trailing" id="Shv-eY-Eap"/>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="leading" secondItem="8fl-WJ-dg3" secondAttribute="leading" id="SyP-zp-6nY"/>
+                            <constraint firstItem="8fl-WJ-dg3" firstAttribute="leading" secondItem="kHM-7i-aVw" secondAttribute="leading" id="jKP-BE-u8h"/>
+                            <constraint firstItem="Y07-Lc-7gx" firstAttribute="trailing" secondItem="8fl-WJ-dg3" secondAttribute="trailing" id="xVX-Ue-498"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Category" image="square.grid.3x3.middleleft.filled" catalog="system" id="wRh-0V-UcW"/>
+                    <connections>
+                        <outlet property="categorySegment" destination="MAY-lJ-iFC" id="KNT-eM-ze9"/>
+                        <outlet property="itemCollection" destination="8fl-WJ-dg3" id="Feb-Yn-l7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1AK-Wz-M66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="54"/>
+            <point key="canvasLocation" x="1185.4961832061069" y="53.521126760563384"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zdx-dH-2l6">
@@ -171,8 +244,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bag.fill" catalog="system" width="128" height="128"/>
-        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
@@ -181,7 +254,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

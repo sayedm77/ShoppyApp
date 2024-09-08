@@ -8,15 +8,15 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: UIViewController  ,UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class HomeViewController: UIViewController {
     var indicator : UIActivityIndicatorView?
     var viewModel = HomeViewModel()
     @IBOutlet weak var brandsCollection: UICollectionView!
     @IBOutlet weak var adsCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       //  registerCells()
-     //   setIndicator()
+          
+        setIndicator()
     }
     override func viewWillAppear(_ animated: Bool) {
         registerCells()
@@ -46,54 +46,58 @@ class HomeViewController: UIViewController  ,UICollectionViewDelegate , UICollec
         
     }
     
-
+    // MARK: - GetData :
+    
+    func displayBrands() {
+        _  = viewModel.getBrandsData()
+    }
+    
+    func displayAdsData() {
+          indicator?.stopAnimating()
+        _ = viewModel.getAdsData()
+    }
+    func loadData(){
         
-        func displayBrands() {
-          _  = viewModel.getBrandsData()
-        }
-        
-        func displayAdsData() {
-            indicator?.stopAnimating()
-            _ = viewModel.getAdsData()
-        }
-        func loadData(){
-           
-           viewModel.loadBrandCollectionData()
-           viewModel.bindBrandsResultToViewController = { [weak self] in
-                DispatchQueue.main.async {
-                    self?.displayBrands()
-                    self?.brandsCollection.reloadData()
-                    
-                }
+        viewModel.loadBrandCollectionData()
+        viewModel.bindBrandsResultToViewController = { [weak self] in
+            DispatchQueue.main.async {
+                self?.displayBrands()
+                self?.brandsCollection.reloadData()
                 
-            }
-            viewModel.loadAdsCollectionData()
-            viewModel.bindAdsResultToViewController = { [weak self] in
-                DispatchQueue.main.async {
-                    self?.displayAdsData()
-                    self?.adsCollection.reloadData()
-                    
-                }
             }
             
         }
-    
-    
+        viewModel.loadAdsCollectionData()
+        viewModel.bindAdsResultToViewController = { [weak self] in
+            DispatchQueue.main.async {
+                self?.displayAdsData()
+                self?.adsCollection.reloadData()
+                
+            }
+        }
+        
+    }
+}
+    // MARK: - Collection  :
+
+    extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == adsCollection{
-            print("hello \(viewModel.Adsresult?.priceRules.count)")
+           // print("hello \(viewModel.Adsresult?.priceRules[0])")
             return viewModel.Adsresult?.priceRules.count ?? 0
         } else{
             return viewModel.Brandsresult?.smartCollections.count ?? 0
         }
     }
+      
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == adsCollection{
             let cell = adsCollection.dequeueReusableCell(withReuseIdentifier: "AdCell", for: indexPath) as! AdsCell
             cell.adsImg.image = UIImage(named: "Ad\(indexPath.row)")
+            print(cell)
             return cell
         } else{
             let cell = brandsCollection.dequeueReusableCell(withReuseIdentifier: "BrandsCell", for: indexPath) as! BrandsCell

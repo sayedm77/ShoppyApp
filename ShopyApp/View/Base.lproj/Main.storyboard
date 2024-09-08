@@ -141,10 +141,10 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MAY-lJ-iFC">
                                 <rect key="frame" x="0.0" y="103" width="393" height="32"/>
                                 <segments>
+                                    <segment title="All"/>
                                     <segment title="Men"/>
                                     <segment title="Women"/>
                                     <segment title="Kids"/>
-                                    <segment title="Sale"/>
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8fl-WJ-dg3">
@@ -192,6 +192,7 @@
                     <connections>
                         <outlet property="categorySegment" destination="MAY-lJ-iFC" id="KNT-eM-ze9"/>
                         <outlet property="itemCollection" destination="8fl-WJ-dg3" id="Feb-Yn-l7F"/>
+                        <outlet property="subCategorySegment" destination="Y07-Lc-7gx" id="bEp-p0-oQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1AK-Wz-M66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

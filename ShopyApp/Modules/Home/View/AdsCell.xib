@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="220" height="175"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-TQ-6MB">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-TQ-6MB">
                         <rect key="frame" x="0.0" y="0.0" width="220" height="175"/>
                     </imageView>
                 </subviews>
@@ -24,7 +24,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="height" secondItem="qCR-TQ-6MB" secondAttribute="height" id="4ah-M2-CXZ"/>
-                <constraint firstItem="qCR-TQ-6MB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="atH-bl-MX3"/>
+                <constraint firstItem="qCR-TQ-6MB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="9wW-9S-wFJ"/>
                 <constraint firstItem="qCR-TQ-6MB" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="bRl-gh-0Kw"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="qCR-TQ-6MB" secondAttribute="trailing" id="dxW-l2-vIb"/>
                 <constraint firstAttribute="width" secondItem="qCR-TQ-6MB" secondAttribute="width" id="elu-lR-XCG"/>
@@ -36,7 +36,4 @@
             <point key="canvasLocation" x="325.19083969465646" y="36.971830985915496"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="ball" width="1920" height="1920"/>
-    </resources>
 </document>

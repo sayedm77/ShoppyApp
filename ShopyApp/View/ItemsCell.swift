@@ -17,11 +17,8 @@ class ItemsCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
-    
-                
-                // Add shadow
+        // Add shadow
         vBackGround.layer.shadowColor = UIColor.black.cgColor
         vBackGround.layer.shadowOpacity = 0.5
         vBackGround.layer.shadowOffset = CGSize(width: 0, height: 2)

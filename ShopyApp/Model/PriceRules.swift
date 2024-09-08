@@ -24,6 +24,7 @@ struct PriceRule: Codable {
     let oncePerCustomer: Bool
     let startsAt, endsAt, createdAt, updatedAt: String
     let title: String
+    let admin_graphql_api_id : String
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -39,7 +40,7 @@ struct PriceRule: Codable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case title
-    
+        case admin_graphql_api_id = "admin_graphql_api_id"
     }
 }
 

@@ -116,6 +116,11 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
             return CGSize(width:widthPerItem, height:(brandsCollection.frame.height/2.5)-20)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let brandsVC = storyboard?.instantiateViewController(identifier: "BrandsVC")as! BrandsViewController
+        self.navigationController?.pushViewController(brandsVC, animated: true)
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 10.0, right: 9.0)

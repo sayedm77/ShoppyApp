@@ -24,6 +24,8 @@
 		3B40D8DC2C89DA6E0027EE83 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B40D8DB2C89DA6E0027EE83 /* API.swift */; };
 		3B4B20422C8F226C0090942F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B20412C8F226C0090942F /* MainViewController.swift */; };
 		3B4B20442C8F24480090942F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4B20432C8F24480090942F /* Assets.xcassets */; };
+		3B65B7CD2C9709EE004802D8 /* BrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B65B7CC2C9709EE004802D8 /* BrandsViewModel.swift */; };
+		3B65B7CF2C970A06004802D8 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B65B7CE2C970A06004802D8 /* BrandsViewController.swift */; };
 		3B6AF42D2C9182C200882EDA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AF42C2C9182C200882EDA /* Helper.swift */; };
 		3B6AF42F2C9187CD00882EDA /* SignIn .storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AF42E2C9187CD00882EDA /* SignIn .storyboard */; };
 		3B6AF4312C91880300882EDA /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6AF4302C91880300882EDA /* Authorization.storyboard */; };
@@ -92,6 +94,8 @@
 		3B40D8DB2C89DA6E0027EE83 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3B4B20412C8F226C0090942F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3B4B20432C8F24480090942F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B65B7CC2C9709EE004802D8 /* BrandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewModel.swift; sourceTree = "<group>"; };
+		3B65B7CE2C970A06004802D8 /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
 		3B6AF42C2C9182C200882EDA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		3B6AF42E2C9187CD00882EDA /* SignIn .storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "SignIn .storyboard"; sourceTree = "<group>"; };
 		3B6AF4302C91880300882EDA /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
@@ -322,6 +326,31 @@
 			path = MeScreen;
 			sourceTree = "<group>";
 		};
+		3B65B7C92C9709C2004802D8 /* Brands */ = {
+			isa = PBXGroup;
+			children = (
+				3B65B7CB2C9709D9004802D8 /* ViewModel */,
+				3B65B7CA2C9709D0004802D8 /* View */,
+			);
+			path = Brands;
+			sourceTree = "<group>";
+		};
+		3B65B7CA2C9709D0004802D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B65B7CE2C970A06004802D8 /* BrandsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B65B7CB2C9709D9004802D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B65B7CC2C9709EE004802D8 /* BrandsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3B6AF4322C91880800882EDA /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +371,7 @@
 		3B6AF4362C91983500882EDA /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				3B65B7C92C9709C2004802D8 /* Brands */,
 				3B6AF4372C91986800882EDA /* Search */,
 				3B7B61672C8F863F00431AD8 /* Authorization */,
 				3B1C84222C88A2C40019278A /* Home */,
@@ -702,10 +732,12 @@
 				3B40D8DA2C89DA530027EE83 /* Reachability.swift in Sources */,
 				3B1C83F02C887D8F0019278A /* ViewController.swift in Sources */,
 				3B1C83EC2C887D8F0019278A /* AppDelegate.swift in Sources */,
+				3B65B7CD2C9709EE004802D8 /* BrandsViewModel.swift in Sources */,
 				3BA4AA1A2C88F8600070F4EA /* BrandsCell.swift in Sources */,
 				3BDF6A6F2C9050230087901B /* UserDefualts.swift in Sources */,
 				3B73A9402C8DBCBD00F0832B /* Products.swift in Sources */,
 				3B9FB04B2C8C87A300489819 /* CategoriesVC.swift in Sources */,
+				3B65B7CF2C970A06004802D8 /* BrandsViewController.swift in Sources */,
 				3B7B61702C8F874E00431AD8 /* SignInViewModel.swift in Sources */,
 				3B9FB04D2C8C87B800489819 /* CategoriesViewModel.swift in Sources */,
 				3B7B616B2C8F871C00431AD8 /* SignInViewController.swift in Sources */,

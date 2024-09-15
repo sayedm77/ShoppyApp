@@ -100,10 +100,10 @@
         <!--SignIn-->
         <scene sceneID="QgG-wt-vc4">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignIn" referencedIdentifier="SignIn" id="jjw-hZ-m9B" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aT-4Q-Nx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="SignIn" id="jjw-hZ-m9B" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="E3t-sy-hoy"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2aT-4Q-Nx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="1"/>
         </scene>

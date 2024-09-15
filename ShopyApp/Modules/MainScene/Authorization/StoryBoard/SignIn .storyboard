@@ -88,6 +88,9 @@
                                     <navigationItem title="ShopyApp" id="Ulo-43-U5u">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.left.circle" catalog="system" id="RWo-fV-kMo">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="a1h-MR-XQQ" id="9pj-5s-hw2"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

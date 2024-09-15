@@ -87,7 +87,7 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == adsCollection{
-            // print("hello \(viewModel.Adsresult?.priceRules[0])")
+           
             return viewModel.Adsresult?.priceRules.count ?? 0
         } else{
             return viewModel.Brandsresult?.smartCollections.count ?? 0
@@ -97,9 +97,8 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == adsCollection{
-            let cell = adsCollection.dequeueReusableCell(withReuseIdentifier: "AdCell", for: indexPath) as! AdsCell
-            cell.adsImg.image = UIImage(named: viewModel.Adsresult?.priceRules[indexPath.row].admin_graphql_api_id ?? "dd")
-            print(cell)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdCell", for: indexPath) as! AdsCell
+            cell.adsImg.image = UIImage(named: "Ad\(indexPath.row)")
             return cell
         } else{
             let cell = brandsCollection.dequeueReusableCell(withReuseIdentifier: "BrandsCell", for: indexPath) as! BrandsCell

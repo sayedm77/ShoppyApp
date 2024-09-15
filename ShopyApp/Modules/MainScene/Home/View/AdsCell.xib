@@ -4,36 +4,53 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdCell" id="gTV-IL-0wX" customClass="AdsCell" customModule="ShopyApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="220" height="175"/>
+            <rect key="frame" x="0.0" y="0.0" width="104" height="77"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="220" height="175"/>
+                <rect key="frame" x="0.0" y="0.0" width="104" height="77"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qCR-TQ-6MB">
-                        <rect key="frame" x="0.0" y="0.0" width="220" height="175"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zA-et-UeV">
+                        <rect key="frame" x="0.0" y="0.0" width="104" height="77"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-ko-J21">
+                                <rect key="frame" x="0.0" y="0.0" width="104" height="77"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6rd-ko-J21" secondAttribute="bottom" id="8Oa-Lz-eX0"/>
+                            <constraint firstItem="6rd-ko-J21" firstAttribute="leading" secondItem="5zA-et-UeV" secondAttribute="leading" id="Lug-n5-auP"/>
+                            <constraint firstAttribute="trailing" secondItem="6rd-ko-J21" secondAttribute="trailing" id="M3D-ai-sak"/>
+                            <constraint firstItem="6rd-ko-J21" firstAttribute="top" secondItem="5zA-et-UeV" secondAttribute="top" id="msF-nv-Ro3"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="height" secondItem="qCR-TQ-6MB" secondAttribute="height" id="4ah-M2-CXZ"/>
-                <constraint firstItem="qCR-TQ-6MB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="9wW-9S-wFJ"/>
-                <constraint firstItem="qCR-TQ-6MB" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="bRl-gh-0Kw"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="qCR-TQ-6MB" secondAttribute="trailing" id="dxW-l2-vIb"/>
-                <constraint firstAttribute="width" secondItem="qCR-TQ-6MB" secondAttribute="width" id="elu-lR-XCG"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="5zA-et-UeV" secondAttribute="trailing" id="35K-DP-YbK"/>
+                <constraint firstItem="5zA-et-UeV" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="M2w-2i-dvd"/>
+                <constraint firstItem="5zA-et-UeV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZYe-yv-m2J"/>
+                <constraint firstItem="5zA-et-UeV" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="m9w-pl-9O3"/>
             </constraints>
-            <size key="customSize" width="220" height="175"/>
+            <size key="customSize" width="104" height="77"/>
             <connections>
-                <outlet property="adsImg" destination="qCR-TQ-6MB" id="NzG-IZ-pOR"/>
+                <outlet property="adsImg" destination="6rd-ko-J21" id="SLl-tg-b02"/>
             </connections>
-            <point key="canvasLocation" x="325.19083969465646" y="36.971830985915496"/>
+            <point key="canvasLocation" x="236.64122137404578" y="2.4647887323943665"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

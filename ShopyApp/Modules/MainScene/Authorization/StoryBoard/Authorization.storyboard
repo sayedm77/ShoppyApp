@@ -27,6 +27,9 @@
                                     <navigationItem title="ShopyApp" largeTitleDisplayMode="always" id="GuD-ev-pwd">
                                         <barButtonItem key="leftBarButtonItem" image="arrowshape.left.circle" catalog="system" id="EnD-BJ-3We">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="D4O-A8-hSd" id="2Y4-oK-w1T"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -123,7 +126,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="aeT-Ze-npX" kind="presentation" identifier="toSign" id="p5g-T6-0lB"/>
+                                    <segue destination="wG8-0G-KLG" kind="presentation" identifier="toSign" id="Zzq-qg-rJe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account? " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m3-Nf-5Jm">
@@ -209,12 +212,12 @@
             <point key="canvasLocation" x="1248" y="-679"/>
         </scene>
         <!--SignIn-->
-        <scene sceneID="APz-Gd-vVV">
+        <scene sceneID="F9q-eX-7HG">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignIn" id="aeT-Ze-npX" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rMW-wF-F3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="SignIn" id="wG8-0G-KLG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vM-h9-9Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208" y="-354"/>
+            <point key="canvasLocation" x="1339" y="-401"/>
         </scene>
     </scenes>
     <resources>

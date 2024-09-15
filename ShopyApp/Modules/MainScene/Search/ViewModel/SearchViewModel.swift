@@ -12,16 +12,14 @@ class SearchViewModel {
     var filteredItems :[Product]?
     var results : Products? {
         didSet{
-            bindResultToViewcontoller ()
+            bindResultToViewcontoller()
         }
     }
-    init(){
-        
+    init() {
         manager = NetworkManager.manager
     }
-    
+
     func loadData (){
-        
         let apiURL = APIHandler.urlForGetting(.products)
         manager?.fetchData(url: apiURL, type: Products.self, complitionHandler: { data in
             self.results = data

@@ -8,9 +8,8 @@
 import UIKit
 import Kingfisher
 
-class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
-   
-    
+class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
+
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var resultTable: UITableView!
@@ -84,8 +83,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     func loadData(){
         viewModel.loadData()
         viewModel.bindResultToViewcontoller = { [weak self] in
-         
-                
+            print("!!!!!!!!!!!!!!!!!!!!!!11 ->>>>>>>>>>>>>>>")
                 DispatchQueue.main.async {
                     self?.displayData()
                     self?.viewModel.filteredItems = self?.viewModel.results?.products
@@ -97,8 +95,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     func displayData(){
         indicator?.stopAnimating()
-        viewModel.results = viewModel.getAllData()
-        
     }
     
     

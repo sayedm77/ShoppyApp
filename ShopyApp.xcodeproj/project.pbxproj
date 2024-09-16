@@ -437,7 +437,7 @@
 		3B9FB0482C8C86DC00489819 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3B9FB04C2C8C87B800489819 /* CategoriesViewModel.swift */,
+				3B9FB04A2C8C87A300489819 /* CategoriesVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 		3B9FB0492C8C870200489819 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3B9FB04A2C8C87A300489819 /* CategoriesVC.swift */,
+				3B9FB04C2C8C87B800489819 /* CategoriesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

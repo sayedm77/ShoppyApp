@@ -11,13 +11,14 @@ import Kingfisher
 class HomeViewController: UIViewController {
     var indicator : UIActivityIndicatorView?
     var viewModel = HomeViewModel()
+    var loggedIn :Bool?
     @IBOutlet weak var brandsCollection: UICollectionView!
     @IBOutlet weak var adsCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-          
+        
         setIndicator()
-     
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         registerCells()
@@ -47,6 +48,34 @@ class HomeViewController: UIViewController {
         
     }
     
+    func showCouponAlert(code:String){
+        let alertController = UIAlertController(title: "congratulations", message: "click Copy to get your copone", preferredStyle: .alert)
+        
+        let copyAction = UIAlertAction(title: "Copy", style: .cancel) { _ in
+            UIPasteboard.general.string = code
+        }
+        
+        alertController.addAction(copyAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showNotLoggedInAlert(){
+        let alertController = UIAlertController(title: "Please", message: "Register To take Coupons", preferredStyle: .alert)
+        
+        let Register = UIAlertAction(title: "Register", style: .default) { _ in
+            
+            self.performSegue(withIdentifier: "SignUp", sender: self)
+        }
+        let cancel = UIAlertAction(title: "cancel", style: .cancel) { _ in
+            
+        }
+        alertController.addAction(cancel)
+        alertController.addAction(Register)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     // MARK: - GetData :
     
     func displayBrands() {
@@ -117,10 +146,22 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let brandsVC = storyboard?.instantiateViewController(identifier: "BrandsVC")as! BrandsViewController
-        self.navigationController?.pushViewController(brandsVC, animated: true)
+        if collectionView == brandsCollection{
+            let brandsVC = storyboard?.instantiateViewController(identifier: "BrandsVC")as! BrandsViewController
+            brandsVC.vendor = viewModel.Brandsresult?.smartCollections[indexPath.row].title
+            brandsVC.brandImage = viewModel.Brandsresult?.smartCollections[indexPath.row].image.src
+            navigationController?.pushViewController(brandsVC, animated: true)
+        }else{
+            if loggedIn ?? false{
+                showCouponAlert(code: viewModel.Adsresult?.priceRules[indexPath.row].title ?? "")
+            }else{
+                showNotLoggedInAlert()
+            }
+           
+        }
         
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 10.0, right: 9.0)

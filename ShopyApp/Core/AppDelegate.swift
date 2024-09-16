@@ -13,8 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        UserDefaults.standard.set(true, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        if let exchangeRate = UserDefaults.standard.value(forKey: "factor"){
+            print("Already set -> factor: \(UserDefaults.standard.double(forKey: "factor")), currency: \(UserDefaults.standard.string(forKey: "currencyTitle") ?? "")")
+        }
+        else{
+            UserDefaults.standard.setValue(1.0, forKey: "factor")
+            UserDefaults.standard.setValue("USD", forKey: "currencyTitle")
+            print(UserDefaults.standard.double(forKey: "factor"))
+        }
 
         return true
     }

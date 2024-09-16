@@ -89,11 +89,20 @@
                     <connections>
                         <outlet property="adsCollection" destination="r6K-Cd-BgZ" id="eEg-gr-BXe"/>
                         <outlet property="brandsCollection" destination="Yj5-SQ-31m" id="HBK-KJ-UFB"/>
+                        <segue destination="4gw-VV-pTy" kind="presentation" identifier="SignUp" id="S8A-70-oC5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xhk-8K-ZkC" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-153.43511450381678" y="71.83098591549296"/>
+        </scene>
+        <!--Authorization-->
+        <scene sceneID="caw-d7-h9Z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Authorization" id="4gw-VV-pTy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wS-sq-Afh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="-60"/>
         </scene>
         <!--ShopyApp-->
         <scene sceneID="VRn-U2-2VL">
@@ -270,22 +279,6 @@
             </objects>
             <point key="canvasLocation" x="822" y="937"/>
         </scene>
-        <!--Me-->
-        <scene sceneID="vSS-Po-wbY">
-            <objects>
-                <viewController id="Z5c-Wa-VfR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HZk-oX-OxU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aL5-NK-95e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Me" image="person.fill" catalog="system" id="LZE-Db-Mwb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GfX-fW-eRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3057" y="139"/>
-        </scene>
         <!--Category-->
         <scene sceneID="3MX-2X-hYa">
             <objects>
@@ -401,12 +394,22 @@
                     <connections>
                         <segue destination="Kwi-OC-JuZ" kind="relationship" relationship="viewControllers" id="0qN-u5-3yJ"/>
                         <segue destination="WDB-Jc-5Ss" kind="relationship" relationship="viewControllers" id="ylS-9f-grI"/>
-                        <segue destination="Z5c-Wa-VfR" kind="relationship" relationship="viewControllers" id="TG6-N8-6D5"/>
+                        <segue destination="wRf-5v-2u2" kind="relationship" relationship="viewControllers" id="1NN-Aj-qCF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C93-p8-QWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1115" y="-1107"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="FV9-ug-tWl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Me" id="wRf-5v-2u2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" image="person.circle" catalog="system" id="s1M-lL-bej"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYA-Bh-V8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="-722"/>
         </scene>
         <!--Home-->
         <scene sceneID="HeE-tr-xWo">
@@ -438,13 +441,13 @@
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="square.grid.3x3.middleleft.filled" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

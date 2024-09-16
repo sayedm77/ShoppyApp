@@ -48,7 +48,7 @@ class BrandsViewController: UIViewController {
     
     func setupFlowLayout(){
         let flowLayout = UICollectionViewFlowLayout()
-        let itemWidth = itemsCollection.frame.width / 2 - 15
+        let itemWidth = itemsCollection.frame.width / 2 - 14
         flowLayout.itemSize = CGSize(width: itemWidth, height: (itemsCollection.frame.height/2)-16)
         itemsCollection.collectionViewLayout = flowLayout
         
@@ -112,13 +112,13 @@ extension BrandsViewController{
     
     func display() {
         indicator?.stopAnimating()
-       // viewModel.result?.products = viewModel.getAllData(vendor: vendor ?? " ")
-//        if (viewModel.result?.products.count  == 0) {
-//            itemsCollection.setEmptyMessage("No Items In Stock ")
-//        } else {
-//            itemsCollection.restore()
-//        }
-//        
+        result?.products = viewModel.getAllData(vendor: vendor ?? " ")
+        if (viewModel.result?.products.count  == 0) {
+            itemsCollection.setEmptyMessage("No Items In Stock ")
+        } else {
+            itemsCollection.restore()
+        }
+        
     }
     
     

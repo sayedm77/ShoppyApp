@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B08392E2C999EF600AD2B6A /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */; };
+		3B0839302C999F1200AD2B6A /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08392F2C999F1200AD2B6A /* WishListViewController.swift */; };
+		3B0839322C999F1F00AD2B6A /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */; };
+		3B15B7AF2C98CA22002271E8 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15B7AE2C98CA22002271E8 /* OrdersTableViewController.swift */; };
+		3B15B7B12C98CA34002271E8 /* OrderDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15B7B02C98CA34002271E8 /* OrderDetailsTableViewController.swift */; };
 		3B1C83EC2C887D8F0019278A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C83EB2C887D8F0019278A /* AppDelegate.swift */; };
 		3B1C83EE2C887D8F0019278A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C83ED2C887D8F0019278A /* SceneDelegate.swift */; };
 		3B1C83F02C887D8F0019278A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C83EF2C887D8F0019278A /* ViewController.swift */; };
@@ -82,6 +87,11 @@
 
 /* Begin PBXFileReference section */
 		2B6FB1C5899737BE68FB9D05 /* Pods-ShopyApp-ShopyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopyApp-ShopyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShopyApp-ShopyAppUITests/Pods-ShopyApp-ShopyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		3B08392F2C999F1200AD2B6A /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
+		3B15B7AE2C98CA22002271E8 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		3B15B7B02C98CA34002271E8 /* OrderDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableViewController.swift; sourceTree = "<group>"; };
 		3B1C83E82C887D8F0019278A /* ShopyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1C83EB2C887D8F0019278A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B1C83ED2C887D8F0019278A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +185,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0839292C999EB600AD2B6A /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				3B08392B2C999ED400AD2B6A /* View */,
+				3B08392A2C999EC000AD2B6A /* ViewModel */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		3B08392A2C999EC000AD2B6A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B08392B2C999ED400AD2B6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B08392F2C999F1200AD2B6A /* WishListViewController.swift */,
+				3B08392C2C999EDA00AD2B6A /* StoryBoard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B08392C2C999EDA00AD2B6A /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		3B1C83DF2C887D8F0019278A = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				3B4EC78A2C98B0EC00039F52 /* MeViewController.swift */,
+				3B15B7AE2C98CA22002271E8 /* OrdersTableViewController.swift */,
+				3B15B7B02C98CA34002271E8 /* OrderDetailsTableViewController.swift */,
 				3B4EC7892C98B0D400039F52 /* StoryBoard */,
 			);
 			path = View;
@@ -438,11 +484,12 @@
 		3B6AF4362C91983500882EDA /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				3B65B7C92C9709C2004802D8 /* Brands */,
 				3B6AF4372C91986800882EDA /* Search */,
 				3B7B61672C8F863F00431AD8 /* Authorization */,
 				3B1C84222C88A2C40019278A /* Home */,
 				3B1C84252C88A2F70019278A /* Categories */,
+				3B0839292C999EB600AD2B6A /* Wishlist */,
+				3B65B7C92C9709C2004802D8 /* Brands */,
 				3B1C84262C88A6370019278A /* MeScreen */,
 			);
 			path = MainScene;
@@ -668,6 +715,7 @@
 				3B1C83F82C887D910019278A /* Base in Resources */,
 				3B4B20442C8F24480090942F /* Assets.xcassets in Resources */,
 				3B1C83F32C887D8F0019278A /* Base in Resources */,
+				3B0839322C999F1F00AD2B6A /* Wishlist.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,11 +844,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4EC78B2C98B0EC00039F52 /* MeViewController.swift in Sources */,
+				3B0839302C999F1200AD2B6A /* WishListViewController.swift in Sources */,
 				3BA4AA162C88F84F0070F4EA /* AdsCell.swift in Sources */,
 				3B1C842A2C88A6C40019278A /* HomeViewController.swift in Sources */,
 				3B40D8DA2C89DA530027EE83 /* Reachability.swift in Sources */,
 				3B1C83F02C887D8F0019278A /* ViewController.swift in Sources */,
 				3B1C83EC2C887D8F0019278A /* AppDelegate.swift in Sources */,
+				3B08392E2C999EF600AD2B6A /* WishlistViewModel.swift in Sources */,
 				3B65B7CD2C9709EE004802D8 /* BrandsViewModel.swift in Sources */,
 				3BA4AA1A2C88F8600070F4EA /* BrandsCell.swift in Sources */,
 				3BDF6A6F2C9050230087901B /* UserDefualts.swift in Sources */,
@@ -815,10 +865,12 @@
 				3B7B616B2C8F871C00431AD8 /* SignInViewController.swift in Sources */,
 				3B40D8D62C89C28E0027EE83 /* PriceRules.swift in Sources */,
 				3B4EC7842C98AF4500039F52 /* ExchangeRates.swift in Sources */,
+				3B15B7AF2C98CA22002271E8 /* OrdersTableViewController.swift in Sources */,
 				3B1C83EE2C887D8F0019278A /* SceneDelegate.swift in Sources */,
 				3B40D8DC2C89DA6E0027EE83 /* API.swift in Sources */,
 				3B40D8D82C89C79A0027EE83 /* Methods.swift in Sources */,
 				3B7B616E2C8F873800431AD8 /* SignUpViewController.swift in Sources */,
+				3B15B7B12C98CA34002271E8 /* OrderDetailsTableViewController.swift in Sources */,
 				3BC18F492C8CE1AC000E4379 /* ItemsCell.swift in Sources */,
 				3BDF6A712C9051FF0087901B /* Customers.swift in Sources */,
 				3B40D8D42C89B90E0027EE83 /* Collections.swift in Sources */,

@@ -72,19 +72,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="ShopyApp" id="TzV-3Y-kT9">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="PoF-xz-lQt">
-                            <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="MiF-gb-Hkp" kind="show" id="9Ii-x1-7cd"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="heart" catalog="system" id="paL-4H-OM0">
-                                <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="bag" catalog="system" id="y33-sj-SDv">
-                                <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" id="y33-sj-SDv">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="adsCollection" destination="r6K-Cd-BgZ" id="eEg-gr-BXe"/>
@@ -291,21 +286,16 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                    <color key="textColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="ShopyApp" id="ZCQ-yJ-XId">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="aNX-vq-apy">
-                                            <color key="tintColor" systemColor="systemMintColor"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem image="heart" catalog="system" id="aI9-6C-mn4">
-                                                <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </barButtonItem>
-                                            <barButtonItem image="bag" catalog="system" id="zf5-ii-paj">
-                                                <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="zf5-ii-paj">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -395,11 +385,22 @@
                         <segue destination="Kwi-OC-JuZ" kind="relationship" relationship="viewControllers" id="0qN-u5-3yJ"/>
                         <segue destination="WDB-Jc-5Ss" kind="relationship" relationship="viewControllers" id="ylS-9f-grI"/>
                         <segue destination="wRf-5v-2u2" kind="relationship" relationship="viewControllers" id="1NN-Aj-qCF"/>
+                        <segue destination="JEX-ss-tUm" kind="relationship" relationship="viewControllers" id="JvP-3Z-vSx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C93-p8-QWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1115" y="-1107"/>
+        </scene>
+        <!--Wishlist-->
+        <scene sceneID="L1A-EU-nZN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Wishlist" id="JEX-ss-tUm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="IeO-b0-jbk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1CR-vJ-aPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3602" y="-582"/>
         </scene>
         <!--Me-->
         <scene sceneID="FV9-ug-tWl">
@@ -409,7 +410,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYA-Bh-V8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="-722"/>
+            <point key="canvasLocation" x="2882" y="-549"/>
         </scene>
         <!--Home-->
         <scene sceneID="HeE-tr-xWo">
@@ -422,7 +423,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <color key="textColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -435,19 +436,15 @@
             <point key="canvasLocation" x="-1546" y="-32"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="bag" catalog="system" width="128" height="128"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="square.grid.3x3.middleleft.filled" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

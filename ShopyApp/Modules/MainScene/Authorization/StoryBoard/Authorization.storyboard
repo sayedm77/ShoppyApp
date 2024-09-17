@@ -211,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="1248" y="-679"/>
         </scene>
-        <!--Signin-->
+        <!--SignIn-->
         <scene sceneID="F9q-eX-7HG">
             <objects>
-                <viewControllerPlaceholder storyboardName="Signin" id="wG8-0G-KLG" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignIn" id="wG8-0G-KLG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vM-h9-9Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1339" y="-401"/>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wishlist-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="WishListViewController" customModule="ShopyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-sq-nZZ">
+                                <rect key="frame" x="0.0" y="46" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="ShopyApp" id="GW8-OV-18p">
+                                        <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="ggd-6b-mUh">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfj-fx-p9j">
+                                <rect key="frame" x="27" y="117.00000000000001" width="308" height="34.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-cR-0K8">
+                                <rect key="frame" x="0.0" y="171.66666666666669" width="393" height="597.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gbg-Zd-1Z4">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="wish" id="ane-Jb-w3K">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UBZ-Cp-6Lb">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14E-Sn-fir">
+                                <rect key="frame" x="16" y="101" width="361" height="682"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poK-tw-Mtt">
+                                        <rect key="frame" x="50" y="567" width="261.33333333333331" height="38.333333333333371"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Register">
+                                            <color key="baseBackgroundColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="rhP-BA-XY4" kind="presentation" modalPresentationStyle="fullScreen" id="ejf-2y-Q3Z"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not signed in..yet      " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-7M-hNJ">
+                                        <rect key="frame" x="50" y="290" width="261.33333333333331" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Sign in to View Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ7-aM-7cB">
+                                        <rect key="frame" x="50" y="375" width="261.33333333333331" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Bz1-7M-hNJ" firstAttribute="top" secondItem="14E-Sn-fir" secondAttribute="top" constant="290" id="0m7-h9-rQi"/>
+                                    <constraint firstAttribute="bottom" secondItem="poK-tw-Mtt" secondAttribute="bottom" constant="76.666666666666629" id="4dO-Rw-uQY"/>
+                                    <constraint firstItem="sQ7-aM-7cB" firstAttribute="leading" secondItem="14E-Sn-fir" secondAttribute="leading" constant="50" id="KMG-qn-MjT"/>
+                                    <constraint firstItem="sQ7-aM-7cB" firstAttribute="top" secondItem="Bz1-7M-hNJ" secondAttribute="bottom" constant="61" id="aeO-1t-m9r"/>
+                                    <constraint firstAttribute="trailing" secondItem="poK-tw-Mtt" secondAttribute="trailing" constant="49.666666666666686" id="bYE-0P-bGz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bz1-7M-hNJ" secondAttribute="trailing" constant="49.666666666666686" id="gsj-kw-bRv"/>
+                                    <constraint firstItem="poK-tw-Mtt" firstAttribute="leading" secondItem="14E-Sn-fir" secondAttribute="leading" constant="50" id="nFC-ix-91s"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQ7-aM-7cB" secondAttribute="trailing" constant="49.666666666666686" id="s1R-qn-nNY"/>
+                                    <constraint firstItem="poK-tw-Mtt" firstAttribute="top" secondItem="sQ7-aM-7cB" secondAttribute="bottom" constant="171" id="s9C-xf-Oqs"/>
+                                    <constraint firstItem="Bz1-7M-hNJ" firstAttribute="leading" secondItem="14E-Sn-fir" secondAttribute="leading" constant="50" id="xo4-1L-1DI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nfj-fx-p9j" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="27" id="38a-6U-Jlp"/>
+                            <constraint firstItem="14E-Sn-fir" firstAttribute="top" secondItem="Qes-sq-nZZ" secondAttribute="bottom" constant="11" id="3Wf-pT-888"/>
+                            <constraint firstItem="14E-Sn-fir" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="14" id="3aT-VJ-hCB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="Qes-sq-nZZ" secondAttribute="top" constant="13" id="7yL-tl-ShF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qes-sq-nZZ" secondAttribute="trailing" id="BY8-TA-zd2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nfj-fx-p9j" secondAttribute="trailing" constant="58" id="M4G-pe-bmb"/>
+                            <constraint firstItem="vR3-cR-0K8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UbD-vb-fyo"/>
+                            <constraint firstItem="Qes-sq-nZZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UqZ-ps-20b"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vR3-cR-0K8" secondAttribute="trailing" id="VPN-dp-ygH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="14E-Sn-fir" secondAttribute="trailing" constant="16" id="jb2-qg-KQf"/>
+                            <constraint firstItem="vR3-cR-0K8" firstAttribute="top" secondItem="nfj-fx-p9j" secondAttribute="bottom" constant="20" id="mfJ-j3-VAl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vR3-cR-0K8" secondAttribute="bottom" id="uLz-ad-f2D"/>
+                            <constraint firstItem="14E-Sn-fir" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="yi7-Uz-gr9"/>
+                            <constraint firstItem="nfj-fx-p9j" firstAttribute="top" secondItem="Qes-sq-nZZ" secondAttribute="bottom" constant="27" id="zFR-gi-nsC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="heart" catalog="system" selectedImage="heart.fill" id="0AB-H7-I2Z">
+                        <color key="badgeColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="notLoggedInView" destination="14E-Sn-fir" id="GH1-qi-sgJ"/>
+                        <outlet property="wishColletionView" destination="vR3-cR-0K8" id="yas-M1-eNu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.625954198473281" y="-2.1126760563380285"/>
+        </scene>
+        <!--Authorization-->
+        <scene sceneID="dEG-jv-rRG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Authorization" id="rhP-BA-XY4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jRN-Ru-BWm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xz-vB-0WN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="858" y="-20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

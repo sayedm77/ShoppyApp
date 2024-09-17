@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="254" y="-177"/>
         </scene>
-        <!--SignIn -->
+        <!--SignIn-->
         <scene sceneID="QgG-wt-vc4">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignIn " id="jjw-hZ-m9B" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SignIn" id="jjw-hZ-m9B" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="E3t-sy-hoy"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aT-4Q-Nx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

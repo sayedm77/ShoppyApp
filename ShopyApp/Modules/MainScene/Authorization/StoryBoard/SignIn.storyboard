@@ -70,6 +70,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="a1h-MR-XQQ" eventType="touchUpInside" id="VW9-ab-5qd"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="By connecting your account confirm that you agree with our Term and Conditions." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-Pu-Ias">
                                 <rect key="frame" x="16" y="673" width="361" height="125"/>

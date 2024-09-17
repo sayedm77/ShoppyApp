@@ -234,9 +234,3 @@ class SignUpViewModel{
         
     
 }
-//                    //dummy order
-//                    let dummyLineItem: [String: Any] = ["title": "dummy", "quantity": 1, "price": "0.0", "properties":[]]
-//                    let order = Order(id: 0, lineItems: [LineItem(id: 0, variantID: nil, productID: nil, price: "12.25", name: "45", title: "title", quantity: 1, properties: [])], createdAt: "2024-03-05T14:14:42-05:00", currency: UserDefaults.standard.string(forKey: "currencyTitle") ?? "", currentSubtotalPrice: "", name: "", subtotalPrice: "", totalPrice: "", customer: CustomerModel(first_name: "", last_name: "", email: "", phone: "+13125551212", tags: "", id: self.userDefualt.getCustomerId(), verified_email: false, note: ""), currentTotalDiscounts: "", totalDiscounts: "",appliedDiscount: nil)
-//                    let parameters = HelperFunctions().convertToDictionary(object: order, String: "order") ?? [:]
-//                    self.networkHandler?.PostToApi(url: APIHandler.urlForGetting(.orders), parameters: parameters)
-       

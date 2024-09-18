@@ -118,4 +118,11 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         80
     }
      
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "ProductInfo", bundle:nil)
+        let nextVC = storyBoard.instantiateViewController(withIdentifier:"prodInfo" ) as! ProductInfoViewController
+//        nextVC.productId = filteredItems?[indexPath.row].id
+//        print( nextVC.productId ?? 0)
+        self.present(nextVC, animated: true)
+    }
 }

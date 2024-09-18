@@ -66,7 +66,7 @@ class SignUpViewModel{
             //print("the data from fetching all customers\(data?.customers?.count ?? 0)")
             if let data = data{
                 self.listOfCustomer = data.customers
-                print("no of customers in load data\(self.listOfCustomer?.count)")
+                print("no of customers in load data\(self.listOfCustomer?.count ?? 0)")
             }else {
                 print("error in getting all customers")
                 

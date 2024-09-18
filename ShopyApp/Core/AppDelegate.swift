@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if let exchangeRate = UserDefaults.standard.value(forKey: "factor"){
+        if let _ = UserDefaults.standard.value(forKey: "factor"){
             print("Already set -> factor: \(UserDefaults.standard.double(forKey: "factor")), currency: \(UserDefaults.standard.string(forKey: "currencyTitle") ?? "")")
         }
         else{

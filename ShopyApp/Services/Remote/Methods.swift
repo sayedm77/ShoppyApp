@@ -13,14 +13,11 @@ enum Methods {
     case POST
     case PUT
     case DELETE
-    
 }
 
-enum ErrorType:Error {
-    
-    case InternalError
-    case ServerError
+enum ErrorType: Error {
+    case internalError
+    case serverError
     case parsingError
     case urlBadFormmated
-    
 }

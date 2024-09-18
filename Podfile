@@ -9,6 +9,7 @@ target 'ShopyApp' do
   pod 'Kingfisher'
   pod 'Alamofire'
   pod 'ReachabilitySwift'
+  pod 'SwiftLint'
 
   target 'ShopyAppTests' do
     inherit! :search_paths

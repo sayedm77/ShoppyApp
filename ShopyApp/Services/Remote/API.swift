@@ -17,8 +17,8 @@ class APIHandler{
     
     // https://9ec35bc5ffc50f6db2fd830b0fd373ac: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@
 //    ios-q1-new-capital-2023.myshopify.com/admin/api/2023-01/products.json
-//    static let currencyApiKey = "dY9QLpBRjobREEQ1uh054fpWULwTak3A"
-//    static let currencyApiURL = "api.apilayer.com/currency_data"
+    static let currencyApiKey = "dY9QLpBRjobREEQ1uh054fpWULwTak3A"
+    static let currencyApiURL = "api.apilayer.com/currency_data"
     
     enum EndPoints {
         case priceRule
@@ -97,8 +97,8 @@ class APIHandler{
         return "\(Completions.ssl.rawValue)\(apiKey):\(accessToken)@\(storeURL)/admin/api/\(Completions.api_version.rawValue)/\(endpoint.order)"
     }
     
-//    class func currenciesUrl(_ endpoint: EndPoints) -> String {
-//        return "\(Completions.ssl.rawValue)\(currencyApiURL)/\(endpoint.order)"
-//    }
+    class func currenciesUrl(_ endpoint: EndPoints) -> String {
+        return "\(Completions.ssl.rawValue)\(currencyApiURL)/\(endpoint.order)"
+    }
 }
 

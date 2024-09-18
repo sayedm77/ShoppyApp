@@ -67,7 +67,7 @@ class CartTableViewCell: UITableViewCell {
 }
 
     
-}
+
 
 // MARK: - A help from the Internet
 // reference: https://stackoverflow.com/questions/37645408/uitableviewcell-rounded-corners-and-shadow#:~:text=The%20best%20way%20to%20do,to%20match%20your%20new%20subclass.

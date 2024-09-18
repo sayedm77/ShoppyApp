@@ -13,18 +13,23 @@ class CategoriesVC: UIViewController {
     var viewModel = CategoriesViewModel()
     var category: String?
     var subCategory: String?
-    
+    var searchFlag : Bool = false
+    var searchWord : String = ""
+    var searching : Bool = false
+
     
     
     @IBOutlet weak var subCategorySegment: UISegmentedControl!
     @IBOutlet weak var itemCollection: UICollectionView!
     @IBOutlet weak var categorySegment: UISegmentedControl!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         itemCollection.delegate = self
         itemCollection.dataSource = self
+        searchBar.delegate = self
         setupFlowLayout()
         setIndicator()
         registerCell()
@@ -172,15 +177,51 @@ extension CategoriesVC {
                     $0.productType.rawValue == subCategory.uppercased()
                 } ?? []
         }
-       // checkIfNoItems()
+        checkIfNoItems()
         itemCollection.reloadData()
     }
     
-//    func checkIfNoItems(){
-//        if (viewModel.filteredResult?.count  == 0) {
-//            itemCollection. setEmptyMessage("No Items In Stock ")
-//        } else {
-//            itemCollection.restore()
-//        }
-//    }
+    func checkIfNoItems(){
+        if (viewModel.filteredResult?.count  == 0) {
+            itemCollection.setEmptyMessage("No Items In Stock ")
+        } else {
+            itemCollection.restore()
+        }
+    }
+}
+// MARK: - Search
+
+extension CategoriesVC : UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searching = true
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searching = false
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchWord = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        print("Search text: \(searchWord)")
+        searchingResult()
+    }
+    
+    
+    func searchingResult(){
+        filterResults(category: category ?? "All",subCategory: subCategory ?? "All")
+
+        if searching == false || searchWord.isEmpty{
+                
+            } else {
+
+               
+                viewModel.filteredResult = viewModel.filteredResult?.filter{
+                    $0.title.lowercased().contains(searchWord.lowercased())
+                } ?? []
+            
+        }
+        
+        checkIfNoItems()
+        itemCollection.reloadData()
+    }
 }

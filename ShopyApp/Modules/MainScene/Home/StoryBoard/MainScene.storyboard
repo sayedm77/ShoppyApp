@@ -290,9 +290,6 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="ShopyApp" id="ZCQ-yJ-XId">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="aNX-vq-apy">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="zf5-ii-paj">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
@@ -300,7 +297,7 @@
                                 </items>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4xv-U7-SoK">
-                                <rect key="frame" x="0.0" y="103" width="393" height="32"/>
+                                <rect key="frame" x="0.0" y="157" width="393" height="32"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Men"/>
@@ -308,12 +305,25 @@
                                     <segment title="Kids"/>
                                 </segments>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4P9-IG-hWA">
+                                <rect key="frame" x="0.0" y="193" width="393" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Shoes"/>
+                                    <segment title="Accessories"/>
+                                    <segment title="T-Shirts"/>
+                                </segments>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-r3-ahM">
+                                <rect key="frame" x="0.0" y="101" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WDB-Jc-5Ss" id="bxU-JT-HDz"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zMT-Mk-aF9">
-                                <rect key="frame" x="0.0" y="173" width="393" height="596"/>
+                                <rect key="frame" x="0.0" y="232" width="393" height="537"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="596" id="X6K-xt-mfJ"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SOX-se-L6W">
                                     <size key="itemSize" width="113" height="99"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -331,43 +341,39 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4P9-IG-hWA">
-                                <rect key="frame" x="0.0" y="134" width="393" height="32"/>
-                                <segments>
-                                    <segment title="All"/>
-                                    <segment title="Shoes"/>
-                                    <segment title="Accessories"/>
-                                    <segment title="T-Shirts"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cn0-zZ-myS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="leading" secondItem="tMG-4e-mI8" secondAttribute="leading" id="72O-6m-xzW"/>
+                            <constraint firstItem="tMG-4e-mI8" firstAttribute="leading" secondItem="3fJ-r3-ahM" secondAttribute="leading" id="1sT-e6-nO0"/>
+                            <constraint firstItem="3fJ-r3-ahM" firstAttribute="top" secondItem="tMG-4e-mI8" secondAttribute="bottom" constant="-2" id="4iQ-bI-rqS"/>
+                            <constraint firstItem="zMT-Mk-aF9" firstAttribute="top" secondItem="4P9-IG-hWA" secondAttribute="bottom" constant="8" id="7H1-c3-pam"/>
+                            <constraint firstItem="4xv-U7-SoK" firstAttribute="leading" secondItem="cn0-zZ-myS" secondAttribute="leading" id="C1F-eb-33e"/>
+                            <constraint firstItem="4xv-U7-SoK" firstAttribute="top" secondItem="3fJ-r3-ahM" secondAttribute="bottom" id="CSi-cY-GNz"/>
                             <constraint firstItem="zMT-Mk-aF9" firstAttribute="leading" secondItem="aPp-QT-vnz" secondAttribute="leading" id="F78-oO-8ag"/>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="leading" secondItem="4xv-U7-SoK" secondAttribute="leading" id="GNR-6O-5t3"/>
-                            <constraint firstItem="zMT-Mk-aF9" firstAttribute="bottom" secondItem="cn0-zZ-myS" secondAttribute="bottom" id="HNj-Dq-7hM"/>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="trailing" secondItem="4xv-U7-SoK" secondAttribute="trailing" id="JvU-sl-otD"/>
-                            <constraint firstItem="zMT-Mk-aF9" firstAttribute="top" secondItem="4P9-IG-hWA" secondAttribute="bottom" constant="8" symbolic="YES" id="K0F-8q-W81"/>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="top" secondItem="4xv-U7-SoK" secondAttribute="bottom" id="OrU-7Q-CfV"/>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="trailing" secondItem="zMT-Mk-aF9" secondAttribute="trailing" id="cAw-mP-OVv"/>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="trailing" secondItem="tMG-4e-mI8" secondAttribute="trailing" id="nib-aJ-pI4"/>
+                            <constraint firstItem="zMT-Mk-aF9" firstAttribute="bottom" secondItem="cn0-zZ-myS" secondAttribute="bottom" id="KMQ-kU-ce1"/>
+                            <constraint firstItem="cn0-zZ-myS" firstAttribute="trailing" secondItem="3fJ-r3-ahM" secondAttribute="trailing" id="QvC-NA-AEG"/>
+                            <constraint firstItem="4P9-IG-hWA" firstAttribute="leading" secondItem="cn0-zZ-myS" secondAttribute="leading" id="UMd-zo-tmn"/>
+                            <constraint firstItem="3fJ-r3-ahM" firstAttribute="leading" secondItem="cn0-zZ-myS" secondAttribute="leading" id="Ulc-M3-1vr"/>
+                            <constraint firstItem="tMG-4e-mI8" firstAttribute="trailing" secondItem="3fJ-r3-ahM" secondAttribute="trailing" id="aZD-i3-JPm"/>
+                            <constraint firstItem="4P9-IG-hWA" firstAttribute="top" secondItem="4xv-U7-SoK" secondAttribute="bottom" constant="5" id="lM7-Y3-FKP"/>
+                            <constraint firstItem="cn0-zZ-myS" firstAttribute="trailing" secondItem="4P9-IG-hWA" secondAttribute="trailing" id="qnC-rS-aBE"/>
+                            <constraint firstItem="cn0-zZ-myS" firstAttribute="trailing" secondItem="4xv-U7-SoK" secondAttribute="trailing" id="tnX-61-UKK"/>
                             <constraint firstItem="tMG-4e-mI8" firstAttribute="top" secondItem="cn0-zZ-myS" secondAttribute="top" id="wIB-1A-p3z"/>
                             <constraint firstAttribute="trailing" secondItem="zMT-Mk-aF9" secondAttribute="trailing" id="xVw-9Y-Wnt"/>
-                            <constraint firstItem="4P9-IG-hWA" firstAttribute="leading" secondItem="zMT-Mk-aF9" secondAttribute="leading" id="ybG-S3-yt3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Category" image="square.grid.3x3.middleleft.filled" catalog="system" id="iQd-dN-PSX"/>
                     <connections>
                         <outlet property="categorySegment" destination="4xv-U7-SoK" id="Wna-G1-Wcj"/>
                         <outlet property="itemCollection" destination="zMT-Mk-aF9" id="vX7-Us-a7d"/>
+                        <outlet property="searchBar" destination="3fJ-r3-ahM" id="gai-Hd-uFJ"/>
                         <outlet property="subCategorySegment" destination="4P9-IG-hWA" id="D4a-CX-gaP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynq-Zs-DVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="126"/>
+            <point key="canvasLocation" x="1620.6106870229007" y="138.73239436619718"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mqD-pj-BkW">

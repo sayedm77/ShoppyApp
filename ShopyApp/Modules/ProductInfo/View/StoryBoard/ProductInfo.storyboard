@@ -21,7 +21,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-pg-giz">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <items>
-                                    <navigationItem title="StyleHub" style="browser" id="jPW-U3-PTk">
+                                    <navigationItem title="ShopyApp" style="browser" id="jPW-U3-PTk">
                                         <barButtonItem key="leftBarButtonItem" title="Item" id="UCK-w6-wIS">
                                             <imageReference key="image" image="arrow.backward.circle.fill" catalog="system" renderingMode="hierarchical">
                                                 <hierarchicalColors>
@@ -30,6 +30,9 @@
                                                     <color systemColor="tertiaryLabelColor"/>
                                                 </hierarchicalColors>
                                             </imageReference>
+                                            <connections>
+                                                <action selector="backButton:" destination="poR-Zu-4WQ" id="ksV-rb-wgM"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" id="bLi-OW-kLB">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,12 +53,18 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Add To Cart">
                                             <color key="baseBackgroundColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addingToCart:" destination="poR-Zu-4WQ" eventType="touchUpInside" id="08d-42-4oc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5N-Qn-EW0">
                                         <rect key="frame" x="21" y="8" width="51" height="43"/>
                                         <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                        <connections>
+                                            <action selector="addingToWishlist:" destination="poR-Zu-4WQ" eventType="touchUpInside" id="K1f-qA-Ww3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -87,10 +96,10 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myDetCell" id="7DK-ML-TDj" customClass="ProductPositionsCollectionViewCell" customModule="E_CommerceApp" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myDetCell" id="7DK-ML-TDj" customClass="ProductPositionsCollectionViewCell" customModule="ShopyApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G0u-SD-2uc" customClass="ProductPositionsCollectionViewCell" customModule="E_CommerceApp" customModuleProvider="target">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G0u-SD-2uc" customClass="ProductPositionsCollectionViewCell" customModule="ShopyApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
@@ -166,24 +175,24 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-pW-Cwl">
-                                                        <rect key="frame" x="265" y="49.666666666666671" width="22" height="21"/>
-                                                        <color key="tintColor" systemColor="systemTealColor"/>
-                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uUZ-z6-CBP">
                                                         <rect key="frame" x="243" y="49.666666666666671" width="22" height="21"/>
                                                         <color key="tintColor" systemColor="systemTealColor"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.leadinghalf.filled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T6X-TA-0HA">
-                                                        <rect key="frame" x="331" y="49.666666666666671" width="22" height="21"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-pW-Cwl">
+                                                        <rect key="frame" x="265" y="49.666666666666671" width="22" height="21"/>
+                                                        <color key="tintColor" systemColor="systemTealColor"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JNK-aY-ZPd">
+                                                        <rect key="frame" x="287" y="49.666666666666671" width="22" height="21"/>
                                                         <color key="tintColor" systemColor="systemTealColor"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-ZD-ATc">
                                                         <rect key="frame" x="309" y="49.666666666666671" width="22" height="21"/>
                                                         <color key="tintColor" systemColor="systemTealColor"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JNK-aY-ZPd">
-                                                        <rect key="frame" x="287" y="49.666666666666671" width="22" height="21"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.leadinghalf.filled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T6X-TA-0HA">
+                                                        <rect key="frame" x="331" y="49.666666666666671" width="22" height="21"/>
                                                         <color key="tintColor" systemColor="systemTealColor"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5N-Ci-f2Z">
@@ -287,7 +296,7 @@
                                                 <rect key="frame" x="8" y="619.66666666666663" width="377" height="380.33333333333337"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewCell" id="ATo-qu-Flt" customClass="ReviewTableViewCell" customModule="E_CommerceApp" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewCell" id="ATo-qu-Flt" customClass="ReviewTableViewCell" customModule="ShopyApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="377" height="47.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ATo-qu-Flt" id="Lwd-ID-Pys">
@@ -357,12 +366,29 @@
                     </view>
                     <size key="freeformSize" width="393" height="852"/>
                     <connections>
+                        <outlet property="addToCartButton" destination="HyW-xd-nef" id="yM5-kY-CQ5"/>
+                        <outlet property="addToFavButton" destination="S5N-Qn-EW0" id="CVo-XG-pJT"/>
+                        <outlet property="color" destination="NLq-Kv-Lpv" id="7Lm-PV-3Ye"/>
+                        <outlet property="cover" destination="h9U-zk-rfa" id="0TT-aG-CTM"/>
+                        <outlet property="descriptionText" destination="U5S-nI-sdj" id="A24-sB-Uon"/>
+                        <outlet property="myCollectionView" destination="6dd-3j-r9Y" id="87V-0X-FPm"/>
+                        <outlet property="productCurrencyText" destination="pyu-QJ-2me" id="CCg-tu-8ek"/>
+                        <outlet property="productNameText" destination="5ei-Pq-jup" id="jgd-Lh-LXf"/>
+                        <outlet property="productPriceText" destination="xOY-hZ-Zef" id="Ye4-Xs-74J"/>
+                        <outlet property="productRateText" destination="p5N-Ci-f2Z" id="bad-YG-cgF"/>
+                        <outlet property="reviewsTableView" destination="ej9-Uu-syN" id="UgD-lR-SIX"/>
+                        <outlet property="size" destination="T8d-LS-vmR" id="SsZ-Wf-39t"/>
+                        <outlet property="star1" destination="uUZ-z6-CBP" id="Y4a-mp-Ktq"/>
+                        <outlet property="star2" destination="1rM-pW-Cwl" id="vtN-xh-484"/>
+                        <outlet property="star3" destination="JNK-aY-ZPd" id="3rc-qm-eVh"/>
+                        <outlet property="star4" destination="kzb-ZD-ATc" id="j4l-cr-UWo"/>
+                        <outlet property="star5" destination="T6X-TA-0HA" id="wW8-Uj-O5W"/>
                         <segue destination="RZ1-nu-nru" kind="presentation" identifier="toSignUp" modalPresentationStyle="fullScreen" id="yzK-yG-jtn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g0-uT-m1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083.206106870229" y="-89.436619718309871"/>
+            <point key="canvasLocation" x="866" y="75"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="uB8-PK-cu8">
@@ -372,10 +398,10 @@
             </objects>
             <point key="canvasLocation" x="2161" y="-380"/>
         </scene>
-        <!--View Controller-->
+        <!--All Reviews View Controller-->
         <scene sceneID="UL0-Iy-xUw">
             <objects>
-                <viewController id="NZ8-3e-qyD" sceneMemberID="viewController">
+                <viewController id="NZ8-3e-qyD" customClass="AllReviewsViewController" customModule="ShopyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M3A-gc-x8N">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,7 +409,7 @@
                             <navigationBar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nex-19-b2x">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                 <items>
-                                    <navigationItem title="StyleSage" id="kIt-Cf-47U">
+                                    <navigationItem title="ShopyApp" id="kIt-Cf-47U">
                                         <barButtonItem key="leftBarButtonItem" title="Item" id="3NR-oP-dhI">
                                             <imageReference key="image" image="arrow.backward.circle.fill" catalog="system" renderingMode="hierarchical">
                                                 <hierarchicalColors>
@@ -392,6 +418,9 @@
                                                     <color systemColor="tertiaryLabelColor"/>
                                                 </hierarchicalColors>
                                             </imageReference>
+                                            <connections>
+                                                <action selector="backButton:" destination="NZ8-3e-qyD" id="mDG-hn-aJl"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" landscapeImage="bag" id="L1O-91-0fd">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -453,15 +482,18 @@
                             <constraint firstItem="bWX-CA-tki" firstAttribute="leading" secondItem="IsJ-Mx-emP" secondAttribute="leading" constant="8" id="u0C-aW-MyJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reviewsTableView" destination="bWX-CA-tki" id="0aU-wr-s7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LvS-wG-Hza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2082" y="167"/>
+            <point key="canvasLocation" x="2224" y="87"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Review View Controller-->
         <scene sceneID="2Mb-My-f0x">
             <objects>
-                <viewController id="u40-4a-gDp" sceneMemberID="viewController">
+                <viewController id="u40-4a-gDp" customClass="AddReviewViewController" customModule="ShopyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aR8-RZ-CRe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -476,6 +508,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Add Review">
                                     <color key="baseBackgroundColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addReview:" destination="u40-4a-gDp" eventType="touchUpInside" id="1eD-Mo-mCg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was your experience ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YP-S7-KId">
                                 <rect key="frame" x="32" y="229" width="329" height="27"/>
@@ -502,7 +537,7 @@
                             <navigationBar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko9-UJ-jIw">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                 <items>
-                                    <navigationItem title="StyleSage" id="5Vh-o8-nK2">
+                                    <navigationItem title="ShopyApp" id="5Vh-o8-nK2">
                                         <barButtonItem key="leftBarButtonItem" id="AIA-w4-Dsk">
                                             <imageReference key="image" image="arrow.left.circle.fill" catalog="system" renderingMode="hierarchical">
                                                 <hierarchicalColors>
@@ -511,6 +546,9 @@
                                                     <color systemColor="tertiaryLabelColor"/>
                                                 </hierarchicalColors>
                                             </imageReference>
+                                            <connections>
+                                                <action selector="backButton:" destination="u40-4a-gDp" id="nfR-P9-kJq"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" landscapeImage="bag" id="ANj-7k-lqy">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -559,10 +597,15 @@
                             <constraint firstItem="uIN-jX-LvG" firstAttribute="trailing" secondItem="uhr-US-btX" secondAttribute="trailing" constant="32" id="yYq-xk-YQ0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="YbO-nc-C7U" id="R0b-EL-zrf"/>
+                        <outlet property="rate" destination="uhr-US-btX" id="fnD-Vd-oja"/>
+                        <outlet property="review" destination="gt6-6J-19R" id="H0y-br-FDy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5o-Gt-kxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3259" y="187"/>
+            <point key="canvasLocation" x="3361" y="111"/>
         </scene>
     </scenes>
     <resources>

@@ -40,6 +40,7 @@ class CategoriesViewModel{
         
         
     }
+    
     private func filterResult(){
         for item in result?.products ?? []{
             let components = item.tags.components(separatedBy: ",")
@@ -73,5 +74,11 @@ class CategoriesViewModel{
         model.checkNetworkReachability { isReachable in
             completion(isReachable)
         }
+    }
+    func findResult(searchWord: String ){
+    filteredResult = filteredResult?.filter{
+            $0.title.lowercased().contains(searchWord.lowercased())
+        } ?? []
+        
     }
 }

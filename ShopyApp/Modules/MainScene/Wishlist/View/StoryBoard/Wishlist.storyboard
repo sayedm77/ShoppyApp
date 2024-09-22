@@ -23,6 +23,9 @@
                                     <navigationItem title="ShopyApp" id="GW8-OV-18p">
                                         <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="ggd-6b-mUh">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="SVi-pp-9Mg" kind="presentation" modalPresentationStyle="fullScreen" id="dOl-E2-xoS"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -135,6 +138,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xz-vB-0WN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="858" y="-20"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="FQB-qh-TNN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="SVi-pp-9Mg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a7J-UD-dD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="81"/>
         </scene>
     </scenes>
     <resources>

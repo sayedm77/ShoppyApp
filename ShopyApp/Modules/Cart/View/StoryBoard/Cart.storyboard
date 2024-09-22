@@ -30,6 +30,9 @@
                                                     <color systemColor="tertiaryLabelColor"/>
                                                 </hierarchicalColors>
                                             </imageReference>
+                                            <connections>
+                                                <action selector="backButton:" destination="Y6W-OH-hqX" id="EsO-M3-KMO"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -63,7 +66,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcp-4y-XHu">
-                                        <rect key="frame" x="24" y="16" width="98" height="32"/>
+                                        <rect key="frame" x="23.999999999999993" y="16" width="97.333333333333314" height="32"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -104,6 +107,9 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <color key="baseBackgroundColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="MMp-L7-Dvh" kind="show" id="iQy-bB-1W1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not registered in..yet      " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hy8-db-yvz">
                                         <rect key="frame" x="16" y="270.66666666666669" width="361" height="27.666666666666686"/>
@@ -162,6 +168,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="91" y="4"/>
+        </scene>
+        <!--Authorization-->
+        <scene sceneID="B3k-OA-lSs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Authorization" id="MMp-L7-Dvh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ukv-jB-s8q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SDs-xv-bmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133" y="-5"/>
         </scene>
     </scenes>
     <resources>

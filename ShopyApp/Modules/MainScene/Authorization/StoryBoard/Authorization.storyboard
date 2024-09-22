@@ -199,7 +199,7 @@
                         <outlet property="password" destination="b3l-Kw-rpN" id="9QM-fd-15B"/>
                         <outlet property="passwordConfirmation" destination="Uxn-8c-zog" id="SZc-bD-CHT"/>
                         <outlet property="secondName" destination="1Ob-Pj-5d0" id="S38-Ie-fEc"/>
-                        <segue destination="ol2-K9-z6I" kind="presentation" identifier="toHome" id="t6i-jB-5dA"/>
+                        <segue destination="ol2-K9-z6I" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="t6i-jB-5dA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zly-JK-H0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

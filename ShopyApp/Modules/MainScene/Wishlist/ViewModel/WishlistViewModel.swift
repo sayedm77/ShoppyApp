@@ -26,7 +26,7 @@ class WishlistViewModel {
         
         
     }
-    
+//    
     func loadWishlistData(){
         let apiUrl = APIHandler.urlForGetting(.draftOrder(id: userDefult?.getWishlistID() ?? ""))
         networkHandler?.fetchData(url: apiUrl, type: DraftOrderContainer.self, complitionHandler: { data in
@@ -50,37 +50,38 @@ class WishlistViewModel {
     }
     
     func extractLineItemsPostData(lineItems: [LineItem]) -> [[String: Any]]{
-               var result: [[String: Any]] = []
-               for item in lineItems{
-                   var properties : [[String: String]] = []
-                   for property in item.properties {
-                       properties.append(["name":property.name, "value": property.value])
-                   }
-                   result.append(["variant_id": item.variantID as Any, "quantity": item.quantity, "properties": properties])
-               }
-                       
-               return result
-           }
-           
+        var result: [[String: Any]] = []
+        for item in lineItems{
+            var properties : [[String: String]] = []
+            for property in item.properties {
+                properties.append(["name":property.name, "value": property.value])
+            }
+            result.append(["variant_id": item.variantID as Any, "quantity": item.quantity, "properties": properties])
+        }
+        
+        return result
+    }
+    
     
     func updateWishList(wishList: [LineItem]?){
-            guard let wishList = wishList else { return }
-            
-    //        print(extractLineItemsPostData(lineItems: cartItems))
-        networkHandler?.putInApi(url: APIHandler.urlForGetting(.draftOrder(id:userDefult?.getWishlistID() ?? "")), parameters: ["draft_order": ["line_items": getFilteredItems(items: wishList).count != 0 ? extractLineItemsPostData(lineItems: wishList) : [dummyLineItem]]])
-        }
-    
-    func getFilteredItems(items: [LineItem]?) -> [LineItem]{
-        var result: [LineItem] = []
-        guard let itmes = items else { return [] }
-        print(itmes.count)
-        for item in itmes {
-            if item.title ?? "" != "dummy" {
-                result.append(item)
+        guard let wishList = wishList else { return }
+        
+            //        print(extractLineItemsPostData(lineItems: cartItems))
+                networkHandler?.putInApi(url: APIHandler.urlForGetting(.draftOrder(id:userDefult?.getWishlistID() ?? "")), parameters: ["draft_order": ["line_items": getFilteredItems(items: wishList).count != 0 ? extractLineItemsPostData(lineItems: wishList) : [dummyLineItem]]])
+                }
+        
+        func getFilteredItems(items: [LineItem]?) -> [LineItem]{
+            var result: [LineItem] = []
+            guard let itmes = items else { return [] }
+            print(itmes.count)
+            for item in itmes {
+                if item.title ?? "" != "dummy" {
+                    result.append(item)
+                }
             }
+            print(result.count)
+            return result
         }
-        print(result.count)
-        return result
-        }
+        
+    }
 
-}

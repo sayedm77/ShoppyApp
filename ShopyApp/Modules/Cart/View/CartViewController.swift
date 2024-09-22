@@ -27,7 +27,12 @@ class CartViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
+    @IBAction func backButton(_ sender: Any) {
+//        if cartDidChange{
+//            print("Cart Items changed. Updating...")
+//            viewModel?.updateOrder(cartItems: cartProducts)
+//        }
+        dismiss(animated: true)
+    }
    
 }

@@ -13,7 +13,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var resultTable: UITableView!
-    
+//    var data = [Product]()
+//    var filteredData : [Product]
     var viewModel = SearchViewModel()
     var indicator : UIActivityIndicatorView?
     var searchWord : String = ""
@@ -83,7 +84,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     func loadData(){
         viewModel.loadData()
         viewModel.bindResultToViewcontoller = { [weak self] in
-            print("!!!!!!!!!!!!!!!!!!!!!!11 ->>>>>>>>>>>>>>>")
+          
                 DispatchQueue.main.async {
                     self?.displayData()
                     self?.viewModel.filteredItems = self?.viewModel.results?.products
@@ -119,10 +120,13 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "ProductInfo", bundle:nil)
-        let nextVC = storyBoard.instantiateViewController(withIdentifier:"prodInfo" ) as! ProductInfoViewController
-//        nextVC.productId = filteredItems?[indexPath.row].id
-//        print( nextVC.productId ?? 0)
-        self.present(nextVC, animated: true)
+
+        let storyboard = UIStoryboard(name: "ProductInfo", bundle: nil)
+        let productInfovc = storyboard.instantiateViewController(withIdentifier: "prodInfo") as! ProductInfoViewController
+       
+        productInfovc.productId = viewModel.filteredItems?[indexPath.row].id
+       print(productInfovc.productId ?? 0)
+        self.present(productInfovc, animated: true)
     }
+
 }

@@ -20,11 +20,15 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        customerImage.layer.masksToBounds = false
-        customerImage.layer.cornerRadius = (customerImage.frame.height)/12
-        customerImage.clipsToBounds = true
+        if let save = customerImage {
+            customerImage.layer.masksToBounds = false
+            customerImage.layer.cornerRadius = (customerImage.frame.height)/12
+            customerImage.clipsToBounds = true
+            
+        }else{
+            print("mafish")
+        }
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

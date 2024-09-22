@@ -79,6 +79,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" id="y33-sj-SDv">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Dap-WB-fTI" kind="presentation" modalPresentationStyle="fullScreen" id="bLA-cQ-Yz4"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -193,6 +196,9 @@
                     <navigationItem key="navigationItem" title="ShopyApp" id="LiK-v8-KmS">
                         <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="LtQ-zs-2Vj">
                             <color key="tintColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="Dap-WB-fTI" kind="presentation" modalPresentationStyle="fullScreen" id="xni-sL-tCa"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -272,7 +278,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9V-IB-0wb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="937"/>
+            <point key="canvasLocation" x="946" y="1581"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="rQm-6r-5M6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="Dap-WB-fTI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adF-Rr-7oK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="867"/>
         </scene>
         <!--Category-->
         <scene sceneID="3MX-2X-hYa">
@@ -292,6 +306,9 @@
                                     <navigationItem title="ShopyApp" id="ZCQ-yJ-XId">
                                         <barButtonItem key="rightBarButtonItem" image="bag" catalog="system" id="zf5-ii-paj">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="Dap-WB-fTI" kind="presentation" modalPresentationStyle="fullScreen" id="PXD-5U-ji9"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -442,6 +459,9 @@
             <point key="canvasLocation" x="-1546" y="-32"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PXD-5U-ji9"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="bag" catalog="system" width="128" height="128"/>

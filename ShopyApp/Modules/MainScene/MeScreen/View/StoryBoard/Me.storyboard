@@ -28,6 +28,9 @@
                                             </barButtonItem>
                                             <barButtonItem image="bag" catalog="system" id="cb3-zw-Y8e">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <segue destination="liE-qQ-mSH" kind="presentation" modalPresentationStyle="fullScreen" id="VzV-d8-e0i"/>
+                                                </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
@@ -208,7 +211,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-187" y="4"/>
+            <point key="canvasLocation" x="-184" y="-130"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="WCv-fb-22l">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="liE-qQ-mSH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HtE-RV-Hff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="-209"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="u9U-GZ-EHI">
@@ -275,7 +286,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h83-ab-BwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="753"/>
+            <point key="canvasLocation" x="430" y="837"/>
         </scene>
     </scenes>
     <resources>

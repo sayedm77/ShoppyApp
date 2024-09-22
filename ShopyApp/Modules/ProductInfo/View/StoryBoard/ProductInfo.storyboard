@@ -36,6 +36,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" id="bLi-OW-kLB">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="uoC-K9-E8t" kind="show" id="6tI-Li-vIs"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -424,6 +427,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" landscapeImage="bag" id="L1O-91-0fd">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="uoC-K9-E8t" kind="show" id="Of3-ox-Bn3"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -490,6 +496,16 @@
             </objects>
             <point key="canvasLocation" x="2224" y="87"/>
         </scene>
+        <!--Cart-->
+        <scene sceneID="Thd-Aw-iwz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="uoC-K9-E8t" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8zp-zg-7FT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBa-2X-Pdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2384" y="694"/>
+        </scene>
         <!--Add Review View Controller-->
         <scene sceneID="2Mb-My-f0x">
             <objects>
@@ -552,6 +568,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="bag" catalog="system" landscapeImage="bag" id="ANj-7k-lqy">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="uoC-K9-E8t" kind="show" id="39E-bA-fDs"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -608,6 +627,9 @@
             <point key="canvasLocation" x="3361" y="111"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6tI-Li-vIs"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward.circle.fill" catalog="system" width="128" height="123"/>
         <image name="arrow.left.circle.fill" catalog="system" width="128" height="123"/>

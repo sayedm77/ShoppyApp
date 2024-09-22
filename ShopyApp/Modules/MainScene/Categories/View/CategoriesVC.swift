@@ -124,8 +124,15 @@ extension CategoriesVC : UICollectionViewDelegate,UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 12.0, right: 9.0)
     }
-  
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "ProductInfo", bundle: nil)
+        let productInfovc = storyboard.instantiateViewController(withIdentifier: "prodInfo") as! ProductInfoViewController
+       
+        productInfovc.productId = viewModel.filteredResult?[indexPath.row].id
+       print(productInfovc.productId ?? 0)
+        self.present(productInfovc, animated: true)
+    }
+
     
 }
 // MARK: - getData

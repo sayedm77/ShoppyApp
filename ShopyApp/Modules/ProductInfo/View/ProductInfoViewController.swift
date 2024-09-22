@@ -126,6 +126,9 @@ class ProductInfoViewController: UIViewController , UICollectionViewDataSource, 
         }
         
     }
+    @IBAction func allReviewsButton(_ sender: Any) {
+        reviewsTableView.reloadData()
+    }
     
     func showAlert(flag:Bool = false){
         let alertController = UIAlertController(title: "No Internet Connection", message: "Check your network and try again", preferredStyle: .alert)

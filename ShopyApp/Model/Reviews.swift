@@ -54,8 +54,8 @@ class Reviews{
                 rating: 3.7
             ),
             Review(
-                customerName: "Menna",
-                customerImage: "girlIcon",
+                customerName: "Sayed",
+                customerImage: "boyIcon",
                 createdAt: "2024-01-30",
                 massage: "This has become an essential part of my life. I don't know how I lived without it",
                 rating: 4.0
@@ -68,8 +68,8 @@ class Reviews{
                 rating: 3.9
             ),
             Review(
-                customerName: "Nada",
-                customerImage: "girlIcon",
+                customerName: "Abdallah",
+                customerImage: "boyIcon",
                 createdAt: "2024-02-16",
                 massage: "Top-notch quality and excellent craftsmanship",
                 rating: 3.8
@@ -82,8 +82,8 @@ class Reviews{
                 rating: 4.5
             ),
             Review(
-                customerName: "Sara",
-                customerImage: "girlIcon",
+                customerName: "Ashraf",
+                customerImage: "boyIcon",
                 createdAt: "2023-12-19",
                 massage: "Excellent value for money. I highly recommend this to anyone looking for a solid product.",
                 rating: 4.8

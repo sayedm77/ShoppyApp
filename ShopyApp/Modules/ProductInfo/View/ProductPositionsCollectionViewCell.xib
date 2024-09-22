@@ -16,17 +16,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="396" height="288"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="Ad1" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-LI-v32">
-                        <rect key="frame" x="0.0" y="0.0" width="396" height="288"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="Ad1" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-LI-v32">
+                        <rect key="frame" x="28" y="10" width="340" height="268"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="8JV-Nb-2wF"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="4nG-LI-v32" secondAttribute="trailing" id="S2o-uV-q4I"/>
-                <constraint firstAttribute="bottom" secondItem="4nG-LI-v32" secondAttribute="bottom" id="TYV-oL-PaR"/>
-                <constraint firstItem="4nG-LI-v32" firstAttribute="top" secondItem="xOY-CQ-Ekf" secondAttribute="top" id="W0f-Vl-0cO"/>
-                <constraint firstItem="4nG-LI-v32" firstAttribute="leading" secondItem="xOY-CQ-Ekf" secondAttribute="leading" id="uFB-yA-euK"/>
+                <constraint firstItem="4nG-LI-v32" firstAttribute="leading" secondItem="8JV-Nb-2wF" secondAttribute="leading" constant="28" id="BPs-xY-3Eg"/>
+                <constraint firstItem="8JV-Nb-2wF" firstAttribute="trailing" secondItem="4nG-LI-v32" secondAttribute="trailing" constant="28" id="DVI-xc-rke"/>
+                <constraint firstAttribute="width" secondItem="4nG-LI-v32" secondAttribute="height" multiplier="99:67" id="umh-Fj-yZl"/>
+                <constraint firstItem="4nG-LI-v32" firstAttribute="centerY" secondItem="xOY-CQ-Ekf" secondAttribute="centerY" id="ywA-lg-QpF"/>
             </constraints>
             <size key="customSize" width="396" height="288"/>
             <connections>

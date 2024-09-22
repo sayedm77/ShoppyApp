@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         registerCells()
         setupCollectionView()
+        setupCollectionView2()
         loadData()
     }
     func registerCells (){
@@ -37,6 +38,15 @@ class HomeViewController: UIViewController {
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         brandsCollection.setCollectionViewLayout(layout, animated: true)
+        
+    }
+    func setupCollectionView2(){
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        adsCollection.setCollectionViewLayout(layout, animated: true)
         
     }
     func setIndicator(){
@@ -116,7 +126,7 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == adsCollection{
-           
+            
             return viewModel.Adsresult?.priceRules.count ?? 0
         } else{
             return viewModel.Brandsresult?.smartCollections.count ?? 0
@@ -139,7 +149,7 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == adsCollection {
-            return CGSize(width: (UIScreen.main.bounds.width) - 60, height: (adsCollection.frame.height) - 50)
+            return CGSize(width: adsCollection.frame.width , height: view.frame.height)
         } else{
             let widthPerItem = brandsCollection.frame.width / 2 - 20
             return CGSize(width:widthPerItem, height:(brandsCollection.frame.height/2.5)-20)
@@ -157,14 +167,19 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
             }else{
                 showNotLoggedInAlert()
             }
-           
+            
         }
         
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 10.0, right: 9.0)
+        if collectionView == adsCollection{
+            return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 10.0, right: 9.0)
+            
+        }else{
+            return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 10.0, right: 9.0)
+        }
+        
     }
- 
 }

@@ -246,7 +246,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-IJ-EPI">
-                                                <rect key="frame" x="8" y="490.00000000000006" width="377" height="129.66666666666669"/>
+                                                <rect key="frame" x="8" y="489.99999999999994" width="377" height="128.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="921-OH-o8B">
                                                         <rect key="frame" x="0.0" y="0.0" width="115.33333333333333" height="26.333333333333332"/>
@@ -266,17 +266,20 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-9X-nSi">
-                                                        <rect key="frame" x="0.0" y="94.666666666666629" width="82.666666666666671" height="27"/>
+                                                        <rect key="frame" x="0.0" y="93.333333333333371" width="82.666666666666671" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABC-Nc-9B7">
-                                                        <rect key="frame" x="233" y="91.333333333333371" width="144" height="38.333333333333343"/>
-                                                        <color key="tintColor" red="0.066996686159999999" green="0.24146991970000001" blue="0.14529058340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="220" y="91.333333333333371" width="157" height="37"/>
+                                                        <color key="tintColor" systemColor="systemPurpleColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="View all reviews"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="View all reviews">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                                        </buttonConfiguration>
                                                         <connections>
+                                                            <action selector="allReviewsButton:" destination="poR-Zu-4WQ" eventType="touchUpInside" id="xdK-wg-YQO"/>
                                                             <segue destination="NZ8-3e-qyD" kind="presentation" modalPresentationStyle="fullScreen" id="t1X-vI-qNo"/>
                                                         </connections>
                                                     </button>
@@ -296,7 +299,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ej9-Uu-syN">
-                                                <rect key="frame" x="8" y="619.66666666666663" width="377" height="380.33333333333337"/>
+                                                <rect key="frame" x="8" y="618.33333333333337" width="377" height="381.66666666666663"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewCell" id="ATo-qu-Flt" customClass="ReviewTableViewCell" customModule="ShopyApp" customModuleProvider="target">
@@ -391,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g0-uT-m1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="75"/>
+            <point key="canvasLocation" x="837" y="101"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="uB8-PK-cu8">
@@ -632,7 +635,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Of3-ox-Bn3"/>
+        <segue reference="6tI-Li-vIs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward.circle.fill" catalog="system" width="128" height="123"/>
@@ -649,6 +652,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -447,6 +447,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NZ8-3e-qyD" id="ZMT-96-YXO"/>
+                                    <outlet property="delegate" destination="NZ8-3e-qyD" id="AcL-zn-OA4"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoU-Nz-xk1">
                                 <rect key="frame" x="8" y="59.999999999999993" width="377" height="21.666666666666664"/>
@@ -628,7 +632,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6tI-Li-vIs"/>
+        <segue reference="Of3-ox-Bn3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward.circle.fill" catalog="system" width="128" height="123"/>

@@ -38,6 +38,8 @@
 		3B4EC78B2C98B0EC00039F52 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4EC78A2C98B0EC00039F52 /* MeViewController.swift */; };
 		3B4EC78D2C98B10200039F52 /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4EC78C2C98B10200039F52 /* MeViewModel.swift */; };
 		3B4EC78F2C98B13700039F52 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4EC78E2C98B13700039F52 /* Me.storyboard */; };
+		3B58141B2CA03C790064F57C /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58141A2CA03C790064F57C /* Currencies.swift */; };
+		3B58141D2CA03C890064F57C /* ExchangeCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58141C2CA03C890064F57C /* ExchangeCurrency.swift */; };
 		3B5C43CA2C9AD0D0000A417B /* OrdersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C43C92C9AD0D0000A417B /* OrdersTableViewModel.swift */; };
 		3B5C43D12C9AD62D000A417B /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C43D02C9AD62D000A417B /* ProductInfoViewController.swift */; };
 		3B5C43D32C9AD645000A417B /* AllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5C43D22C9AD645000A417B /* AllReviewsViewController.swift */; };
@@ -137,6 +139,8 @@
 		3B4EC78A2C98B0EC00039F52 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		3B4EC78C2C98B10200039F52 /* MeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
 		3B4EC78E2C98B13700039F52 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		3B58141A2CA03C790064F57C /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
+		3B58141C2CA03C890064F57C /* ExchangeCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCurrency.swift; sourceTree = "<group>"; };
 		3B5C43C92C9AD0D0000A417B /* OrdersTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewModel.swift; sourceTree = "<group>"; };
 		3B5C43D02C9AD62D000A417B /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		3B5C43D22C9AD645000A417B /* AllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsViewController.swift; sourceTree = "<group>"; };
@@ -472,6 +476,15 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
+		3B5814192CA03C4D0064F57C /* Currencies */ = {
+			isa = PBXGroup;
+			children = (
+				3B58141A2CA03C790064F57C /* Currencies.swift */,
+				3B58141C2CA03C890064F57C /* ExchangeCurrency.swift */,
+			);
+			path = Currencies;
+			sourceTree = "<group>";
+		};
 		3B5C43CB2C9AD588000A417B /* ProductInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +699,7 @@
 			children = (
 				3BDF6A6E2C9050230087901B /* UserDefualts.swift */,
 				3B6AF42C2C9182C200882EDA /* Helper.swift */,
+				3B5814192CA03C4D0064F57C /* Currencies */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -984,6 +998,7 @@
 				3B4EC7822C98AF1900039F52 /* Shop.swift in Sources */,
 				3B4EC7802C98AED100039F52 /* Address.swift in Sources */,
 				3B73A9402C8DBCBD00F0832B /* Products.swift in Sources */,
+				3B58141B2CA03C790064F57C /* Currencies.swift in Sources */,
 				3B9FB04B2C8C87A300489819 /* CategoriesVC.swift in Sources */,
 				3B65B7CF2C970A06004802D8 /* BrandsViewController.swift in Sources */,
 				3B7B61702C8F874E00431AD8 /* SignInViewModel.swift in Sources */,
@@ -999,6 +1014,7 @@
 				3B7B616E2C8F873800431AD8 /* SignUpViewController.swift in Sources */,
 				3B15B7B12C98CA34002271E8 /* OrderDetailsTableViewController.swift in Sources */,
 				3B5C43EE2C9B1750000A417B /* CartViewController.swift in Sources */,
+				3B58141D2CA03C890064F57C /* ExchangeCurrency.swift in Sources */,
 				3BC18F492C8CE1AC000E4379 /* ItemsCell.swift in Sources */,
 				3B5C43F62C9B1845000A417B /* CartTableViewCell.swift in Sources */,
 				3B5C43CA2C9AD0D0000A417B /* OrdersTableViewModel.swift in Sources */,

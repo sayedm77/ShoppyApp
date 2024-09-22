@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ItemsCell: UICollectionViewCell {
     @IBOutlet weak var vBackGround: UIView!
@@ -31,5 +32,12 @@ class ItemsCell: UICollectionViewCell {
         vBackGround.clipsToBounds = true
         
     }
-
+    func configureCell(product:Product?){
+        guard let url = URL(string: product?.image.src ?? "") else{return}
+        productImage.kf.setImage(with: url,placeholder:UIImage(named: "placeHolder"))
+        productPrice.text = ExchangeCurrency.exchangeCurrency(amount: product?.variants.first?.price)
+        productTitle.text = product?.title
+        productSubtitle.text = product?.vendor
+        currency.text =  ExchangeCurrency.getCurrency()
+    }
 }

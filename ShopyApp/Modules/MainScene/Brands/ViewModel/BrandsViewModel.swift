@@ -12,6 +12,7 @@ class BrandsViewModel{
     var networkHandler:NetworkManager?
     var bindResultToViewController : (()->()) = {}
     var filteredResult : [Product]?
+    var sortedProducts : [Product]?
     let model = ReachabilityManager()
     var result : Products?{
          didSet{
@@ -38,26 +39,16 @@ class BrandsViewModel{
     }
     
     
-    func sortProductsByPriceAscending() {
-          self.filteredResult = self.result?.products.sorted {
-              guard let price1 = Double($0.variants.first?.price ?? "0"),
-                    let price2 = Double($1.variants.first?.price ?? "0") else {
-                  return false
-              }
-              return price1 < price2
-          } ?? []
-          
-          bindResultToViewController() // Bind data after sorting
-      }
+    func sortByPrice() {
+        sortedProducts = filteredResult?.sorted {Double($0.variants.first?.price ?? "0.0") ?? 0.0  < Double($1.variants.first?.price ?? "0.0")  ?? 0.0 }
+        }
 
       // Get all products for a specific vendor
-      func getAllData(vendor: String) -> [Product] {
+      func getAllData(vendor: String) {
           self.filteredResult = self.result?.products.filter {
               $0.vendor == vendor
           } ?? []
           
-          bindResultToViewController() // Bind data after filtering
-          return filteredResult ?? []
       }
       
     func checkNetworkReachability(completion: @escaping (Bool) -> Void) {

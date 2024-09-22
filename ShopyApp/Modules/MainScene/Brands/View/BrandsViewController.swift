@@ -18,7 +18,7 @@ class BrandsViewController: UIViewController {
     var sortedProducts : [Product]?
     var vendor : String?
     var brandImage : String?
-    var flag :Bool?
+    var flag = false
     var searchWord : String = ""
     var searching : Bool = false
     
@@ -30,7 +30,7 @@ class BrandsViewController: UIViewController {
         registerCell()
         viewModel.checkNetworkReachability{ isReachable in
             if isReachable {
-                self.loadData()
+                self.loadData2()
             } else {
                 DispatchQueue.main.async {
                     self.showAlert()
@@ -41,18 +41,18 @@ class BrandsViewController: UIViewController {
     }
     
     @IBAction func sortList(_ sender: Any) {
-        sortedProducts = result?.products.sorted {Double($0.variants.first?.price ?? "0.0") ?? 0.0  < Double($1.variants.first?.price ?? "0.0")  ?? 0.0 }
-        flag = !(flag ?? false)
+        viewModel.sortByPrice()
+        flag = !flag
         itemsCollection.reloadData()
     }
-    
-    func setupFlowLayout(){
-        let flowLayout = UICollectionViewFlowLayout()
-        let itemWidth = itemsCollection.frame.width / 2 - 14
-        flowLayout.itemSize = CGSize(width: itemWidth, height: (itemsCollection.frame.height/2)-16)
-        itemsCollection.collectionViewLayout = flowLayout
-        
-    }
+//    
+//    func setupFlowLayout(){
+//        let flowLayout = UICollectionViewFlowLayout()
+//        let itemWidth = itemsCollection.frame.width / 2 - 14
+//        flowLayout.itemSize = CGSize(width: itemWidth, height: (itemsCollection.frame.height/2)-16)
+//        itemsCollection.collectionViewLayout = flowLayout
+//        
+//    }
 
 }
 
@@ -94,26 +94,22 @@ extension BrandsViewController{
 // MARK: - getData
 
 extension BrandsViewController{
-    
-    func loadData(){
-        viewModel = BrandsViewModel()
-        viewModel.loadData()
-        viewModel.bindResultToViewController = { [weak self] in
-            DispatchQueue.main.async {
-                
-                self?.display()
-                self?.itemsCollection.reloadData()
 
-                self?.brandLogo.kf.setImage(with:URL(string: self?.brandImage ?? "placeHolder") ,placeholder: UIImage(named: "placeHolder"))
-                self?.itemsCount.text = "\(self? .viewModel.result?.products.count ?? 0) Items"
-                            }
+    func loadData2(){
+        viewModel.loadData()
+        viewModel.bindResultToViewController = {[weak self] in
+            self?.indicator?.stopAnimating()
+            self?.display()
+            self?.itemsCollection.reloadData()
+            self?.brandLogo.kf.setImage(with:URL(string: self?.brandImage ?? "placeHolder") ,placeholder: UIImage(named: "placeHolder"))
+            self?.itemsCount.text =  "\(self?.viewModel.filteredResult?.count ?? 0) Items"
         }
     }
+
     
     func display() {
-        indicator?.stopAnimating()
-        result?.products = viewModel.getAllData(vendor: vendor ?? " ")
-        if (viewModel.result?.products.count  == 0) {
+        viewModel.getAllData(vendor: vendor ?? " ")
+        if (viewModel.filteredResult?.count  == 0) {
             itemsCollection.setEmptyMessage("No Items In Stock ")
         } else {
             itemsCollection.restore()
@@ -121,39 +117,59 @@ extension BrandsViewController{
         
     }
     
-    
 }
 
 
 // MARK: - collectionView:
 
-
+//
 extension BrandsViewController :  UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate ,UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.result?.products.count ?? 0
-    }
+
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = itemsCollection.dequeueReusableCell(withReuseIdentifier: "itemsCell", for: indexPath) as! ItemsCell
-        
-        let url = URL(string:viewModel.result?.products[indexPath.row].image.src ?? "placeHolder")
-         cell.productImage.kf.setImage(with:url ,placeholder: UIImage(named: "placeHolder"))
-         cell.productTitle.text = (viewModel.result?.products[indexPath.row].title ?? "").split(separator: "|").dropFirst().first.map(String.init)
-         cell.productSubtitle.text = viewModel.result?.products[indexPath.row].vendor
-         let price = Double(viewModel.result?.products[indexPath.row].variants.first?.price ?? "0.0")
-         cell.productPrice.text = "\(price ?? 0.0)"
-        return cell
-    }
+    return viewModel.filteredResult?.count ?? 0
+}
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = itemsCollection.dequeueReusableCell(withReuseIdentifier: "itemsCell", for: indexPath) as! ItemsCell
+   
+    let url = URL(string:viewModel.filteredResult?[indexPath.row].image.src ?? "placeHolder")
+    cell.productImage.kf.setImage(with:url ,placeholder: UIImage(named: "placeHolder"))
+    cell.productTitle.text = (viewModel.filteredResult?[indexPath.row].title ?? "").split(separator: "|").dropFirst().first.map(String.init)
+    cell.productSubtitle.text = viewModel.filteredResult?[indexPath.row].vendor
+    let price = Double(viewModel.filteredResult?[indexPath.row].variants.first?.price ?? "0.0")
+    cell.productPrice.text = "\(price ?? 0.0)"
+   
+    return cell
+}
+func setupFlowLayout(){
+    let flowLayout = UICollectionViewFlowLayout()
+    let itemWidth = itemsCollection.frame.width / 2 - 15
+    flowLayout.itemSize = CGSize(width: itemWidth, height: (itemsCollection.frame.height/2)-20)
+    itemsCollection.collectionViewLayout = flowLayout
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12.0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2.0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 12.0, right: 9.0)
-    }
+}
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 12.0
+}
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 2.0
+}
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 12.0, right: 9.0)
+}
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let storyboard = UIStoryboard(name: "ProductInfo", bundle: nil)
+    let productInfovc = storyboard.instantiateViewController(withIdentifier: "prodInfo") as! ProductInfoViewController
+   
+    productInfovc.productId = viewModel.filteredResult?[indexPath.row].id
+   print(productInfovc.productId ?? 0)
+    self.present(productInfovc, animated: true)
+}
+
+
 }
 // MARK: - Empty Collection View Handling
 

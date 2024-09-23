@@ -90,6 +90,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="IsK-1y-RZ8"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="D3k-5I-7Mu"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcM-rp-Ulf">
                                 <rect key="frame" x="25" y="544" width="136.33333333333334" height="54"/>
@@ -124,7 +128,7 @@
                                         <rect key="frame" x="56" y="474" width="281" height="38.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Register">
-                                            <color key="baseBackgroundColor" red="0.1843137255" green="0.34509803919999998" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="Jpk-jY-ZgD" kind="show" id="TM3-ce-u3l"/>
@@ -207,6 +211,7 @@
                         <outlet property="notLoggedView" destination="r9D-iP-ltY" id="bpv-Oe-a8t"/>
                         <outlet property="ordersTable" destination="qa6-5g-F6A" id="Afc-PF-1hd"/>
                         <outlet property="wishlistCollection" destination="Bkl-tz-2cx" id="TJA-Y8-CYW"/>
+                        <segue destination="wp3-LT-yjf" kind="show" identifier="ProductInfoSegue" id="Pn5-7A-OIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,7 +224,7 @@
                 <viewControllerPlaceholder storyboardName="Cart" id="liE-qQ-mSH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtE-RV-Hff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="-209"/>
+            <point key="canvasLocation" x="576" y="-270"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="u9U-GZ-EHI">
@@ -229,7 +234,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiJ-kn-yAO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="-20"/>
+            <point key="canvasLocation" x="598" y="-35"/>
+        </scene>
+        <!--ProductInfo-->
+        <scene sceneID="cm0-r6-pUP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProductInfo" id="wp3-LT-yjf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="H3W-sm-uGh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rik-co-lLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="113"/>
         </scene>
         <!--Orders Table View Controller-->
         <scene sceneID="AKb-Je-vfM">
@@ -299,6 +314,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

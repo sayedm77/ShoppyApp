@@ -398,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1C84272C88A6730019278A /* HomeViewModel.swift */,
+				3B65B7CC2C9709EE004802D8 /* BrandsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -453,7 +454,6 @@
 			children = (
 				3B4EC78C2C98B10200039F52 /* MeViewModel.swift */,
 				3B5C43C92C9AD0D0000A417B /* OrdersTableViewModel.swift */,
-				3B4EC7892C98B0D400039F52 /* StoryBoard */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -464,6 +464,7 @@
 				3B4EC78A2C98B0EC00039F52 /* MeViewController.swift */,
 				3B15B7AE2C98CA22002271E8 /* OrdersTableViewController.swift */,
 				3B15B7B02C98CA34002271E8 /* OrderDetailsTableViewController.swift */,
+				3B4EC7892C98B0D400039F52 /* StoryBoard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -589,7 +590,6 @@
 		3B65B7CB2C9709D9004802D8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3B65B7CC2C9709EE004802D8 /* BrandsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

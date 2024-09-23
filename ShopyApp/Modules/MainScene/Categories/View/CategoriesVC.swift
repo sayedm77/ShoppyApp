@@ -103,6 +103,7 @@ extension CategoriesVC : UICollectionViewDelegate,UICollectionViewDataSource,UIC
         cell.productSubtitle.text = viewModel.filteredResult?[indexPath.row].vendor
         let price = Double(viewModel.filteredResult?[indexPath.row].variants.first?.price ?? "0.0")
         cell.productPrice.text = "\(price ?? 0.0)"
+        cell.currency.text = UserDefaults.standard.string(forKey: "currencyTitle")
        
         return cell
     }

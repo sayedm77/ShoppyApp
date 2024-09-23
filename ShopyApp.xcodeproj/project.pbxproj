@@ -12,6 +12,9 @@
 		3B06030A2CA1C3180013E692 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0603092CA1C3180013E692 /* OrderTableViewCell.xib */; };
 		3B06030B2CA1C3180013E692 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603082CA1C3180013E692 /* OrderTableViewCell.swift */; };
 		3B06030D2CA1C3280013E692 /* OrderReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B06030C2CA1C3280013E692 /* OrderReview.storyboard */; };
+		3B0603132CA1C7C50013E692 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603122CA1C7C50013E692 /* AddressBookViewController.swift */; };
+		3B0603152CA1C7E00013E692 /* AddressBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0603142CA1C7E00013E692 /* AddressBook.storyboard */; };
+		3B0603172CA1C8820013E692 /* AddressBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603162CA1C8820013E692 /* AddressBookViewModel.swift */; };
 		3B08392E2C999EF600AD2B6A /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */; };
 		3B0839302C999F1200AD2B6A /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08392F2C999F1200AD2B6A /* WishListViewController.swift */; };
 		3B0839322C999F1F00AD2B6A /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */; };
@@ -114,6 +117,9 @@
 		3B0603082CA1C3180013E692 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		3B0603092CA1C3180013E692 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		3B06030C2CA1C3280013E692 /* OrderReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderReview.storyboard; sourceTree = "<group>"; };
+		3B0603122CA1C7C50013E692 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
+		3B0603142CA1C7E00013E692 /* AddressBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressBook.storyboard; sourceTree = "<group>"; };
+		3B0603162CA1C8820013E692 /* AddressBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewModel.swift; sourceTree = "<group>"; };
 		3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		3B08392F2C999F1200AD2B6A /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
@@ -265,6 +271,40 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
+		3B06030E2CA1C76F0013E692 /* AdressesBook */ = {
+			isa = PBXGroup;
+			children = (
+				3B0603102CA1C7920013E692 /* View */,
+				3B06030F2CA1C78B0013E692 /* ViewModel */,
+			);
+			path = AdressesBook;
+			sourceTree = "<group>";
+		};
+		3B06030F2CA1C78B0013E692 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B0603162CA1C8820013E692 /* AddressBookViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B0603102CA1C7920013E692 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B0603122CA1C7C50013E692 /* AddressBookViewController.swift */,
+				3B0603112CA1C7970013E692 /* StoryBoard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B0603112CA1C7970013E692 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3B0603142CA1C7E00013E692 /* AddressBook.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		3B0839292C999EB600AD2B6A /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +439,7 @@
 				3B5C43CB2C9AD588000A417B /* ProductInfo */,
 				3B5C43E92C9B16DC000A417B /* Cart */,
 				3B0603002CA1C1D00013E692 /* OrderReview */,
+				3B06030E2CA1C76F0013E692 /* AdressesBook */,
 				3B4EC77D2C98AE8800039F52 /* Adresses */,
 			);
 			path = Modules;
@@ -886,6 +927,7 @@
 				3B6AF4312C91880300882EDA /* Authorization.storyboard in Resources */,
 				3BA4AA152C88F84F0070F4EA /* AdsCell.xib in Resources */,
 				3B06030A2CA1C3180013E692 /* OrderTableViewCell.xib in Resources */,
+				3B0603152CA1C7E00013E692 /* AddressBook.storyboard in Resources */,
 				3B4EC78F2C98B13700039F52 /* Me.storyboard in Resources */,
 				3B5C43F52C9B1845000A417B /* CartTableViewCell.xib in Resources */,
 				3B6AF4352C918BAA00882EDA /* MainScene.storyboard in Resources */,
@@ -1040,6 +1082,7 @@
 				3B0603042CA1C2280013E692 /* OrderReviewViewModel.swift in Sources */,
 				3B1C83EC2C887D8F0019278A /* AppDelegate.swift in Sources */,
 				3B08392E2C999EF600AD2B6A /* WishlistViewModel.swift in Sources */,
+				3B0603132CA1C7C50013E692 /* AddressBookViewController.swift in Sources */,
 				3B5C43D32C9AD645000A417B /* AllReviewsViewController.swift in Sources */,
 				3B65B7CD2C9709EE004802D8 /* BrandsViewModel.swift in Sources */,
 				3BA4AA1A2C88F8600070F4EA /* BrandsCell.swift in Sources */,
@@ -1056,6 +1099,7 @@
 				3B9FB04D2C8C87B800489819 /* CategoriesViewModel.swift in Sources */,
 				3B7B616B2C8F871C00431AD8 /* SignInViewController.swift in Sources */,
 				3B06030B2CA1C3180013E692 /* OrderTableViewCell.swift in Sources */,
+				3B0603172CA1C8820013E692 /* AddressBookViewModel.swift in Sources */,
 				3B40D8D62C89C28E0027EE83 /* PriceRules.swift in Sources */,
 				3B4EC7842C98AF4500039F52 /* ExchangeRates.swift in Sources */,
 				3B15B7AF2C98CA22002271E8 /* OrdersTableViewController.swift in Sources */,

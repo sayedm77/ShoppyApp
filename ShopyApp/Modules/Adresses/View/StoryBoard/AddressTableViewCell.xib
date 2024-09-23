@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="zLL-dK-sLM" customClass="AddressTableViewCell" customModule="ShopyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="564" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zLL-dK-sLM" id="fIq-mm-eRG">
+                <rect key="frame" x="0.0" y="0.0" width="564" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Addresses" translatesAutoresizingMaskIntoConstraints="NO" id="jcf-GT-ojx">
+                        <rect key="frame" x="16" y="0.0" width="50" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="38w-QH-RRg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh2-fq-Fwt">
+                        <rect key="frame" x="82" y="7.9999999999999982" width="41.333333333333343" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TE-x1-733">
+                        <rect key="frame" x="82" y="65" width="41.333333333333343" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPa-Gg-a7B">
+                        <rect key="frame" x="82" y="121.66666666666667" width="41.333333333333343" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K1-Db-E05">
+                        <rect key="frame" x="490.33333333333331" y="58" width="49.666666666666686" height="34.333333333333343"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="checkmark.circle.fill" catalog="system" renderingMode="hierarchical">
+                                <hierarchicalColors>
+                                    <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="systemGreenColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                        </buttonConfiguration>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Kh2-fq-Fwt" firstAttribute="top" secondItem="fIq-mm-eRG" secondAttribute="top" constant="8" id="2f2-7p-kLE"/>
+                    <constraint firstItem="3TE-x1-733" firstAttribute="centerY" secondItem="jcf-GT-ojx" secondAttribute="centerY" id="8cB-3b-ipc"/>
+                    <constraint firstAttribute="trailing" secondItem="7K1-Db-E05" secondAttribute="trailing" constant="24" id="C6y-5z-hmT"/>
+                    <constraint firstItem="jcf-GT-ojx" firstAttribute="leading" secondItem="fIq-mm-eRG" secondAttribute="leading" constant="16" id="Lmx-lx-Fxn"/>
+                    <constraint firstItem="7K1-Db-E05" firstAttribute="centerY" secondItem="fIq-mm-eRG" secondAttribute="centerY" id="Ox9-sq-4z1"/>
+                    <constraint firstItem="3TE-x1-733" firstAttribute="leading" secondItem="jcf-GT-ojx" secondAttribute="trailing" constant="16" id="T6a-57-tfl"/>
+                    <constraint firstItem="jcf-GT-ojx" firstAttribute="top" secondItem="fIq-mm-eRG" secondAttribute="top" id="Yog-sA-RcT"/>
+                    <constraint firstItem="Kh2-fq-Fwt" firstAttribute="leading" secondItem="jcf-GT-ojx" secondAttribute="trailing" constant="16" id="bQv-jo-PDh"/>
+                    <constraint firstAttribute="bottom" secondItem="jcf-GT-ojx" secondAttribute="bottom" id="dej-88-N6s"/>
+                    <constraint firstItem="kPa-Gg-a7B" firstAttribute="leading" secondItem="jcf-GT-ojx" secondAttribute="trailing" constant="16" id="gPc-rm-z77"/>
+                    <constraint firstAttribute="bottom" secondItem="kPa-Gg-a7B" secondAttribute="bottom" constant="8" id="m9I-hX-Gs4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="dpS-HN-V2Z"/>
+            <connections>
+                <outlet property="addressLabel" destination="kPa-Gg-a7B" id="0pm-yL-gUm"/>
+                <outlet property="cityLabel" destination="3TE-x1-733" id="u7F-DP-MOy"/>
+                <outlet property="isDefault" destination="7K1-Db-E05" id="st6-bz-g8t"/>
+                <outlet property="nameLabel" destination="Kh2-fq-Fwt" id="nkk-16-HFV"/>
+            </connections>
+            <point key="canvasLocation" x="325.19083969465646" y="37.323943661971832"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Addresses" width="512" height="512"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

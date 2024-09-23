@@ -15,6 +15,13 @@
 		3B0603132CA1C7C50013E692 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603122CA1C7C50013E692 /* AddressBookViewController.swift */; };
 		3B0603152CA1C7E00013E692 /* AddressBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0603142CA1C7E00013E692 /* AddressBook.storyboard */; };
 		3B0603172CA1C8820013E692 /* AddressBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603162CA1C8820013E692 /* AddressBookViewModel.swift */; };
+		3B06031C2CA1CEC60013E692 /* Addresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B06031B2CA1CEC60013E692 /* Addresses.storyboard */; };
+		3B06031F2CA1CEDA0013E692 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B06031E2CA1CEDA0013E692 /* AddressTableViewCell.xib */; };
+		3B0603202CA1CEDA0013E692 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06031D2CA1CEDA0013E692 /* AddressTableViewCell.swift */; };
+		3B0603232CA1CF6D0013E692 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603222CA1CF6D0013E692 /* AddressesViewController.swift */; };
+		3B0603252CA1CF880013E692 /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603242CA1CF880013E692 /* AddNewAddressViewController.swift */; };
+		3B0603272CA1CFB20013E692 /* AddNewAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603262CA1CFB20013E692 /* AddNewAddressViewModel.swift */; };
+		3B0603292CA1CFC70013E692 /* AddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0603282CA1CFC70013E692 /* AddressesViewModel.swift */; };
 		3B08392E2C999EF600AD2B6A /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */; };
 		3B0839302C999F1200AD2B6A /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08392F2C999F1200AD2B6A /* WishListViewController.swift */; };
 		3B0839322C999F1F00AD2B6A /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */; };
@@ -120,6 +127,13 @@
 		3B0603122CA1C7C50013E692 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		3B0603142CA1C7E00013E692 /* AddressBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressBook.storyboard; sourceTree = "<group>"; };
 		3B0603162CA1C8820013E692 /* AddressBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewModel.swift; sourceTree = "<group>"; };
+		3B06031B2CA1CEC60013E692 /* Addresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Addresses.storyboard; sourceTree = "<group>"; };
+		3B06031D2CA1CEDA0013E692 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		3B06031E2CA1CEDA0013E692 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		3B0603222CA1CF6D0013E692 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		3B0603242CA1CF880013E692 /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
+		3B0603262CA1CFB20013E692 /* AddNewAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewModel.swift; sourceTree = "<group>"; };
+		3B0603282CA1CFC70013E692 /* AddressesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewModel.swift; sourceTree = "<group>"; };
 		3B08392D2C999EF600AD2B6A /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		3B08392F2C999F1200AD2B6A /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		3B0839312C999F1F00AD2B6A /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
@@ -301,6 +315,35 @@
 			isa = PBXGroup;
 			children = (
 				3B0603142CA1C7E00013E692 /* AddressBook.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		3B0603182CA1CE380013E692 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B0603262CA1CFB20013E692 /* AddNewAddressViewModel.swift */,
+				3B0603282CA1CFC70013E692 /* AddressesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B0603192CA1CE3F0013E692 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B0603222CA1CF6D0013E692 /* AddressesViewController.swift */,
+				3B0603242CA1CF880013E692 /* AddNewAddressViewController.swift */,
+				3B06031A2CA1CE9C0013E692 /* StoryBoard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B06031A2CA1CE9C0013E692 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3B06031B2CA1CEC60013E692 /* Addresses.storyboard */,
+				3B06031D2CA1CEDA0013E692 /* AddressTableViewCell.swift */,
+				3B06031E2CA1CEDA0013E692 /* AddressTableViewCell.xib */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -525,6 +568,8 @@
 			isa = PBXGroup;
 			children = (
 				3B4EC77E2C98AEA700039F52 /* Model */,
+				3B0603192CA1CE3F0013E692 /* View */,
+				3B0603182CA1CE380013E692 /* ViewModel */,
 			);
 			path = Adresses;
 			sourceTree = "<group>";
@@ -941,7 +986,9 @@
 				3B06030D2CA1C3280013E692 /* OrderReview.storyboard in Resources */,
 				3B1C83F32C887D8F0019278A /* Base in Resources */,
 				3B0839322C999F1F00AD2B6A /* Wishlist.storyboard in Resources */,
+				3B06031C2CA1CEC60013E692 /* Addresses.storyboard in Resources */,
 				3B5C43F22C9B17EF000A417B /* Cart.storyboard in Resources */,
+				3B06031F2CA1CEDA0013E692 /* AddressTableViewCell.xib in Resources */,
 				3B5C43E62C9AFC81000A417B /* ProductPositionsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1077,6 +1124,7 @@
 				3B1C842A2C88A6C40019278A /* HomeViewController.swift in Sources */,
 				3B40D8DA2C89DA530027EE83 /* Reachability.swift in Sources */,
 				3B5C43F02C9B1763000A417B /* CartViewModel.swift in Sources */,
+				3B0603272CA1CFB20013E692 /* AddNewAddressViewModel.swift in Sources */,
 				3B0603062CA1C2550013E692 /* OrderReviewViewController.swift in Sources */,
 				3B1C83F02C887D8F0019278A /* ViewController.swift in Sources */,
 				3B0603042CA1C2280013E692 /* OrderReviewViewModel.swift in Sources */,
@@ -1096,7 +1144,9 @@
 				3B9FB04B2C8C87A300489819 /* CategoriesVC.swift in Sources */,
 				3B65B7CF2C970A06004802D8 /* BrandsViewController.swift in Sources */,
 				3B7B61702C8F874E00431AD8 /* SignInViewModel.swift in Sources */,
+				3B0603232CA1CF6D0013E692 /* AddressesViewController.swift in Sources */,
 				3B9FB04D2C8C87B800489819 /* CategoriesViewModel.swift in Sources */,
+				3B0603292CA1CFC70013E692 /* AddressesViewModel.swift in Sources */,
 				3B7B616B2C8F871C00431AD8 /* SignInViewController.swift in Sources */,
 				3B06030B2CA1C3180013E692 /* OrderTableViewCell.swift in Sources */,
 				3B0603172CA1C8820013E692 /* AddressBookViewModel.swift in Sources */,
@@ -1112,10 +1162,12 @@
 				3B5C43EE2C9B1750000A417B /* CartViewController.swift in Sources */,
 				3B58141D2CA03C890064F57C /* ExchangeCurrency.swift in Sources */,
 				3BC18F492C8CE1AC000E4379 /* ItemsCell.swift in Sources */,
+				3B0603202CA1CEDA0013E692 /* AddressTableViewCell.swift in Sources */,
 				3B5C43F62C9B1845000A417B /* CartTableViewCell.swift in Sources */,
 				3B5C43CA2C9AD0D0000A417B /* OrdersTableViewModel.swift in Sources */,
 				3B5C43D12C9AD62D000A417B /* ProductInfoViewController.swift in Sources */,
 				3BDF6A712C9051FF0087901B /* Customers.swift in Sources */,
+				3B0603252CA1CF880013E692 /* AddNewAddressViewController.swift in Sources */,
 				3B40D8D42C89B90E0027EE83 /* Collections.swift in Sources */,
 				3B4B20422C8F226C0090942F /* MainViewController.swift in Sources */,
 				3B4EC77C2C98AE1700039F52 /* DraftOrder.swift in Sources */,

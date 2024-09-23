@@ -14,14 +14,48 @@ class WishListViewController: UIViewController,UICollectionViewDataSource,UIColl
     
     var wishListResult : [LineItem]?
     var indicator : UIActivityIndicatorView?
-    var wishlistViewModel : WishlistViewModel?
+    var wishlistViewModel = WishlistViewModel()
     var loggedIn : Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-       
-        wishlistViewModel = WishlistViewModel()
+        setupFlowLayout()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        IntializeProperties()
+        setupLongGestureRecognizerOnCollection()
+        //print(loggedIn)
+        wishlistViewModel.checkNetworkReachability{ isReachable in
+            if isReachable {
+                if self.loggedIn == true{
+                    self.notLoggedInView.isHidden = true
+                    self.setIndicator()
+                    self.loadWishlistData()
+                }else{
+                    self.notLoggedInView.isHidden = false
+                }
+                
+            } else {
+                DispatchQueue.main.async {
+                    self.showAlert()
+                }
+            }
+        }
+    }
+    
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProductInfoSegue"{
+            if let indexPath = sender as? IndexPath {
+                let destinationVC = segue.destination as? ProductInfoViewController
+                destinationVC?.productId = wishListResult?[indexPath.row].productID
+                
+            }
+        }
     }
     
     
@@ -53,33 +87,37 @@ class WishListViewController: UIViewController,UICollectionViewDataSource,UIColl
         performSegue(withIdentifier: "ProductInfoSegue", sender: indexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func setupFlowLayout(){
+        let flowLayout = UICollectionViewFlowLayout()
+        let itemWidth = wishColletionView.frame.width / 2 - 15
+        flowLayout.itemSize = CGSize(width: itemWidth, height: (wishColletionView.frame.height/2)-20)
+        wishColletionView.collectionViewLayout = flowLayout
         
-        let width = wishColletionView.frame.width / 2 - 10
-        return CGSize(width: width, height: collectionView.frame.width-60)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15.0
+        return 12.0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 2.0
     }
-    
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10.0, left: 9.0, bottom: 12.0, right: 9.0)
+    }
     
 }
 // MARK: - UI setUp
 extension WishListViewController{
      func IntializeProperties(){
      wishListResult = []
-     loggedIn = wishlistViewModel?.isLoggedIn()
+     loggedIn = wishlistViewModel.isLoggedIn()
         
      }
     func configureTableView(){
         wishColletionView.dataSource = self
         wishColletionView.delegate = self
-        wishColletionView.register(UINib(nibName: "ItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "wish")
+        wishColletionView.register(UINib(nibName: "ItemsCell", bundle: nil), forCellWithReuseIdentifier: "wish")
     }
     
     func setIndicator(){
@@ -102,7 +140,32 @@ extension WishListViewController{
         self.present(alertController, animated: true, completion: nil)
     }
 }
-extension WishListViewController: UIGestureRecognizerDelegate{
+extension WishListViewController {
+
+ func loadWishlistData(){
+     wishlistViewModel.loadWishlistData()
+     wishlistViewModel.bindWishlistToViewController = {[weak self] in
+         DispatchQueue.main.async {
+             self?.displayWishlist()
+             self?.wishColletionView.reloadData()
+             
+         }
+         
+     }
+ }
+    func displayWishlist() {
+        indicator?.stopAnimating()
+        wishListResult = wishlistViewModel.getFilteredItems(items: wishlistViewModel.getWishlistData())
+        if (wishListResult?.isEmpty ?? false) {
+            wishColletionView.setEmptyMessage("No items in Wish list ")
+        } else {
+            wishColletionView.restore()
+        }
+        
+    }
+    
+}
+extension WishListViewController: UIGestureRecognizerDelegate {
     func setupLongGestureRecognizerOnCollection() {
        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
        longPressedGesture.minimumPressDuration = 0.5
@@ -127,7 +190,7 @@ extension WishListViewController: UIGestureRecognizerDelegate{
         
         let doneAction = UIAlertAction(title: "Delete", style: .default) { _ in
             self.wishListResult?.remove(at: index.row)
-            self.wishlistViewModel?.updateWishList(wishList: self.wishListResult)
+            self.wishlistViewModel.updateWishList(wishList: self.wishListResult)
             Thread.sleep(forTimeInterval:0.5)
             self.viewWillAppear(true)
         }

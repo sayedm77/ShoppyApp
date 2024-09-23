@@ -123,6 +123,7 @@
                     <connections>
                         <outlet property="notLoggedInView" destination="14E-Sn-fir" id="GH1-qi-sgJ"/>
                         <outlet property="wishColletionView" destination="vR3-cR-0K8" id="yas-M1-eNu"/>
+                        <segue destination="Fbz-2s-W9y" kind="show" identifier="ProductInfoSegue" id="s1l-FD-T0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,7 +138,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xz-vB-0WN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="-20"/>
+            <point key="canvasLocation" x="890" y="-258"/>
         </scene>
         <!--Cart-->
         <scene sceneID="FQB-qh-TNN">
@@ -145,7 +146,17 @@
                 <viewControllerPlaceholder storyboardName="Cart" id="SVi-pp-9Mg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7J-UD-dD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="81"/>
+            <point key="canvasLocation" x="889" y="77"/>
+        </scene>
+        <!--ProductInfo-->
+        <scene sceneID="yh2-Ja-h4a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProductInfo" id="Fbz-2s-W9y" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HTq-tM-FEp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCJ-9b-jLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="254"/>
         </scene>
     </scenes>
     <resources>

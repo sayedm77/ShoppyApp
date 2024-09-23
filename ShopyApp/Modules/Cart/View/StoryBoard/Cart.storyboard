@@ -64,6 +64,9 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="23"/>
                                             <color key="baseBackgroundColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="purchaseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h16-JH-2ZM"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcp-4y-XHu">
                                         <rect key="frame" x="23.999999999999993" y="16" width="97.333333333333314" height="32"/>

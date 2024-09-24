@@ -25,7 +25,7 @@ class AddReviewViewController: UIViewController {
         reviewObj?.createdAt = formattedDate ?? "0"
         reviewObj?.customerName = name.text ?? ""
         reviewObj?.massage = review.text ?? ""
-        reviewObj?.rating = Double(rate.value)
+        reviewObj?.rating = Float(rate.value)
         reviewObj?.customerImage = "boyIcon"
         Reviews.reviews.append(reviewObj!)
         dismiss(animated: true)

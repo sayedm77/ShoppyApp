@@ -13,7 +13,7 @@ class Reviews{
         var customerImage : String
         var createdAt : String
         var massage : String
-        var rating : Double
+        var rating : Float
     }
    
      

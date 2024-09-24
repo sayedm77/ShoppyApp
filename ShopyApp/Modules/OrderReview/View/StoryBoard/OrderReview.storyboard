@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="v92-lR-cij" customClass="ItemsCollectionViewCell" customModule="E_CommerceApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="v92-lR-cij" customClass="ItemsCollectionViewCell" customModule="ShopyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VM6-UZ-vzL">
@@ -142,11 +142,22 @@
                         <outlet property="itemsCollection" destination="14b-dX-cj7" id="Tg4-sK-D0T"/>
                         <outlet property="subTotal" destination="smo-YP-0TR" id="OCx-wb-kSQ"/>
                         <outlet property="totalPrice" destination="MhX-uS-7CF" id="OfL-DB-OYy"/>
+                        <segue destination="McK-ah-XpW" kind="show" identifier="proceed" id="Wt2-6a-ECU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="91" y="4"/>
+        </scene>
+        <!--AddressBook-->
+        <scene sceneID="7jw-5W-xZn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddressBook" id="McK-ah-XpW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="N8O-RJ-Bl3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNV-fa-WKK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="-18"/>
         </scene>
     </scenes>
     <resources>

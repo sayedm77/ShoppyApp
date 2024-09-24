@@ -129,18 +129,18 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let indexPath = cartItems.indexPathForRow(at: point) else {return}
         cartProducts?[indexPath.row].quantity += 1
         cartDidChange = true
-      //  calculateSubtotal()
+        calculateSubtotal()
     }
     @objc func decreaseAction(_ sender: UIButton){
         let point = sender.convert(CGPoint.zero, to: cartItems)
         guard let indexPath = cartItems.indexPathForRow(at: point) else {return}
         cartProducts?[indexPath.row].quantity -= 1
         cartDidChange = true
-      //  calculateSubtotal()
+        calculateSubtotal()
     }
     
     func deleteAlert(_ tableView: UITableView, indexPath: IndexPath){
-        let alert = UIAlertController(title: "Confirm Delete", message: "Do you want to delete this product from cart?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Confirm Delete 😀", message: "Do you want to delete this product from cart?", preferredStyle: .alert)
         let yes = UIAlertAction(title: "Yes", style: .destructive) { UIAlertAction in
             self.cartProducts?.remove(at: indexPath.row)
             tableView.beginUpdates()
@@ -150,7 +150,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             if (self.cartProducts?.count)! == 0 {
                 self.proceedButton.isEnabled = false
             }
-          //  self.calculateSubtotal()
+            self.calculateSubtotal()
         }
         let no = UIAlertAction(title: "No", style: .cancel)
         alert.addAction(yes)
@@ -158,13 +158,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         present(alert, animated: true)
     }
     
-//    func calculateSubtotal(){
-//        var totalPrice = 0.0
-//        for product in cartProducts ?? []{
-//            totalPrice += (UserDefaults.standard.double(forKey: "factor") * (Double(product.price) ?? 0.0)) * Double(product.quantity)
-//        }
-//        self.subtotal.text = String(format: "%.2f",totalPrice)
-//    }
+    func calculateSubtotal(){
+        var totalPrice = 0.0
+        for product in cartProducts ?? []{
+            totalPrice += (UserDefaults.standard.double(forKey: "factor") * (Double(product.price) ?? 0.0)) * Double(product.quantity)
+        }
+        self.subtotal.text = String(format: "%.2f",totalPrice)
+    }
     
     
     // MARK: - Navigation
@@ -173,14 +173,19 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        // Get the new view controller using segue.destination.
 //        if segue.identifier == "reviewOrder"{
-//            let orderReview = segue.destination as! OrderReviewViewController
-////            orderReview.cartItems = cartProducts
-//            orderReview.draftId = viewModel?.dummyDraftId
+//            //            let orderReview = segue.destination as! OrderReviewViewController
+//            ////            orderReview.cartItems = cartProducts
+//            //            orderReview.draftId = viewModel.dummyDraftId
+//            //        }
+//            // Pass the selected object to the new view controller.
 //        }
-//        // Pass the selected object to the new view controller.
 //    }
-//    
     @IBAction func purchaseButton(_ sender: Any) {
+        if cartDidChange{
+            print("Cart Items changed. Updating...")
+            viewModel.updateOrder(cartItems: cartProducts)
+        }
+        performSegue(withIdentifier: "reviewOrder", sender: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {

@@ -273,8 +273,7 @@ class ProductInfoViewController: UIViewController , UICollectionViewDataSource, 
                     self?.addToFavButton.imageView?.image = UIImage(systemName: "heart.fill")
                 }
             }
-            //            Thread.sleep(forTimeInterval: 1)
-            
+        
             
             if self?.productInfoViewModel.isInCart(variantId: self?.productInfoViewModel.getProductDetails()?.variants[(self?.indexOfSize)!].id ?? 0) == true {
                 self?.addToCartButton.isEnabled = false

@@ -112,6 +112,9 @@ Cg
                                     </attributedString>
                                     <color key="baseBackgroundColor" red="0.24382727709999999" green="0.84037724540000003" blue="0.80555157040000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="YWd-up-ywm" kind="show" id="GY0-lL-e6B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-Ng-nMu">
                                 <rect key="frame" x="24" y="768" width="345" height="50"/>
@@ -148,11 +151,32 @@ Cg
                     </view>
                     <connections>
                         <outlet property="defaultAddress" destination="1WG-I7-KrL" id="3Zx-h1-fCN"/>
+                        <segue destination="tu7-CH-4yl" kind="show" identifier="continueToPayment" id="9Rj-RT-ZsL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTI-cr-nVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="-27"/>
+        </scene>
+        <!--Payment-->
+        <scene sceneID="2qi-hM-Kdj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Payment" id="tu7-CH-4yl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cKh-U5-iO6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JD-c0-P4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="-74"/>
+        </scene>
+        <!--Addresses-->
+        <scene sceneID="yCU-M7-oUq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Addresses" id="YWd-up-ywm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fj4-bK-7gc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlP-oX-AIS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="32"/>
         </scene>
     </scenes>
     <resources>

@@ -58,11 +58,11 @@ class MeViewController: UIViewController {
    //  MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "detailsSegue"{
-//            let vc = segue.destination as! OrderDetailsTableViewController
-//            vc.result = result?.orders[ordersTable.indexPathForSelectedRow!.row]
-//        }else 
+        
+        if segue.identifier == "detailsSegue"{
+            let vc = segue.destination as! OrderDetailsTableViewController
+            vc.result = result?.orders[ordersTable.indexPathForSelectedRow!.row]
+        }else 
         if segue.identifier == "ProductInfoSegue"{
             if let indexPath = sender as? IndexPath {
                 let destinationVC = segue.destination as? ProductInfoViewController
@@ -85,7 +85,7 @@ extension MeViewController{
      }
     func registerCell(){
         wishlistCollection.register(UINib(nibName: "ItemsCell", bundle: nil), forCellWithReuseIdentifier: "favCell")
-        //ordersTable.register(OrdersTableViewCell.nib(),forCellReuseIdentifier: "orderCell")
+        ordersTable.register(UINib(nibName: "OrderTableViewCell", bundle: nil),forCellReuseIdentifier: "orderCell")
     }
     
     func setIndicator(){
@@ -110,18 +110,18 @@ extension MeViewController{
 }
 // MARK: - GetData
 extension MeViewController{
-//    func loadData(){
-//        meViewModel.loadData()
-//        self.setIndicator()
-//        meViewModel.bindResultToViewController = { [weak self] in
-//            DispatchQueue.main.async {
-//                self?.display()
-//                self?.ordersTable.reloadData()
-//                
-//            }
-//        }
-//    }
-//    
+    func loadData(){
+        meViewModel.loadData()
+        self.setIndicator()
+        meViewModel.bindResultToViewController = { [weak self] in
+            DispatchQueue.main.async {
+                self?.display()
+                self?.ordersTable.reloadData()
+                
+            }
+        }
+    }
+    
     func loadWishlistData(){
         meViewModel.loadWishlistData()
         meViewModel.bindWishlistToViewController = {[weak self] in
@@ -133,16 +133,16 @@ extension MeViewController{
             
         }
     }
-//    func display() {
-//        indicator?.stopAnimating()
-//        result?.orders = meViewModel.getOrderData( customerId: customerId ?? 0)
-//        if (result?.orders.count  == 0) {
-//            ordersTable.setEmptyMessage("No Orders Yet ")
-//        } else {
-//            ordersTable.restor()
-//        }
-//        
-//    }
+    func display() {
+        indicator?.stopAnimating()
+        result?.orders = meViewModel.getOrderData( customerId: customerId ?? 0)
+        if (result?.orders.count  == 0) {
+            ordersTable.setEmptyMessage("No Orders Yet ")
+        } else {
+            ordersTable.restor()
+        }
+        
+    }
     func displayWishlist() {
         wishListResult = meViewModel.getFilteredItems(items: meViewModel.getWishlistData())
         if (wishListResult?.isEmpty ?? false) {
@@ -155,26 +155,26 @@ extension MeViewController{
     
 }
 
-//// MARK: - TableView
-//extension MeViewController : UITableViewDelegate,UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        result?.orders.count ?? 0
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = ordersTable.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrdersTableViewCell
-//        cell.orderNum.text = "Order No\(result?.orders[indexPath.row].id ?? 0 )"
-//        cell.totalAmount.text = "\(result?.orders[indexPath.row].totalPrice ?? "")\(result?.orders[indexPath.row].currency ?? "")"
-//        cell.CreatedDate.text = result?.orders[indexPath.row].createdAt.split(separator: "T").first.map(String.init)
-//        return cell
-//    }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "detailsSegue", sender: self)
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        (ordersTable.frame.height/2)
-//    }
-//}
+// MARK: - TableView
+extension MeViewController : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        result?.orders.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ordersTable.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
+        cell.orderNum.text = "Order No\(result?.orders[indexPath.row].id ?? 0 )"
+        cell.totalAmount.text = "\(result?.orders[indexPath.row].totalPrice ?? "")\(result?.orders[indexPath.row].currency ?? "")"
+        cell.CreatedDate.text = result?.orders[indexPath.row].createdAt.split(separator: "T").first.map(String.init)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailsSegue", sender: self)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        (ordersTable.frame.height/2)
+    }
+}
 // MARK: - CollectionView
 extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -197,13 +197,6 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ProductInfoSegue", sender: indexPath)
     }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        let width = wishlistCollection.frame.width / 2 - 20
-//        return CGSize(width: width, height: collectionView.frame.width-60)
-//    }
     
     func setupFlowLayout(){
         let flowLayout = UICollectionViewFlowLayout()

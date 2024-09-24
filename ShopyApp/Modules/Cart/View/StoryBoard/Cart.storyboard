@@ -166,13 +166,13 @@
                         <outlet property="currency" destination="kkb-vc-5lS" id="91z-57-VQm"/>
                         <outlet property="nonRegisteredView" destination="yS8-u3-4cd" id="FHR-Ln-gyl"/>
                         <outlet property="proceedButton" destination="onR-fx-27j" id="oeO-Me-IcD"/>
-                        <outlet property="subtotal" destination="jcp-4y-XHu" id="GfW-Ba-itH"/>
+                        <outlet property="subtotal" destination="fVb-Zo-ebB" id="BCb-mU-DtS"/>
                         <segue destination="dQg-PP-JwC" kind="show" identifier="reviewOrder" id="qPF-Gk-pUI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="4"/>
+            <point key="canvasLocation" x="124" y="-519"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="B3k-OA-lSs">

@@ -50,7 +50,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                             self.proceedButton.isEnabled = true
                         }
                         self.cartItems.reloadData()
-                      //  self.calculateSubtotal()
+                        self.calculateSubtotal()
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -170,16 +170,16 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        if segue.identifier == "reviewOrder"{
-//            //            let orderReview = segue.destination as! OrderReviewViewController
-//            ////            orderReview.cartItems = cartProducts
-//            //            orderReview.draftId = viewModel.dummyDraftId
-//            //        }
-//            // Pass the selected object to the new view controller.
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        if segue.identifier == "reviewOrder"{
+                        let orderReview = segue.destination as! OrderReviewViewController
+            //            orderReview.cartItems = cartProducts
+                        orderReview.draftId = viewModel.dummyDraftId
+                    }
+            // Pass the selected object to the new view controller.
+        }
+    
     @IBAction func purchaseButton(_ sender: Any) {
         if cartDidChange{
             print("Cart Items changed. Updating...")

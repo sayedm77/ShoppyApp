@@ -64,12 +64,12 @@ class AddressBookViewController: UIViewController ,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if address?.count == 0{
-//        tableView.setEmptyView(title: "No addresses exist", message: "Go ahead and add an address!")
-//        }
-//        else {
-//        tableView.restore()
-//        }
+        if address?.count == 0{
+        tableView.setEmptyView(title: "No addresses exist", message: "Go ahead and add an address!")
+        }
+        else {
+        tableView.restore()
+        }
         return address?.count ?? 0
     }
     
@@ -88,14 +88,14 @@ class AddressBookViewController: UIViewController ,UITableViewDelegate,UITableVi
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        if segue.identifier == "continueToPayment"{
-//            // Pass the selected object to the new view controller.
-//            let payment = segue.destination as! PaymentViewController
-//            payment.draftId = draftId
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        if segue.identifier == "continueToPayment"{
+            // Pass the selected object to the new view controller.
+            let payment = segue.destination as! PaymentViewController
+            payment.draftId = draftId
+        }
+    }
     
 
      @IBAction func backButtun(_ sender: Any) {

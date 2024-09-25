@@ -18,6 +18,8 @@ class AddNewAddressViewController: UIViewController {
     @IBOutlet weak var addressField: UITextField!
     
     @IBOutlet weak var setDefault: UISwitch!
+    var customerId: Int!
+    var viewModel = AddNewAddressViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,20 @@ class AddNewAddressViewController: UIViewController {
     }
     
     @IBAction func addAddressButton(_ sender: Any) {
+        if nameField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != ""
+        && cityField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != ""
+        && phoneField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != ""
+        && addressField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != ""{
+            viewModel.postAddressToApi(customer_id: customerId, name: nameField.text!, phone: phoneField.text!, city: cityField.text!, address: addressField.text!, setDefault: setDefault.isOn)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                self.dismiss(animated: true)
+            }
+        } else{
+            let alert = UIAlertController(title: "Insufficient Data", message: "Please fill in all the fields", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(ok)
+            present(alert, animated: true)
+        }
     }
     
     /*

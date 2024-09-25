@@ -22,7 +22,7 @@ struct Order: Codable {
     let name: String
     let subtotalPrice: String
     let totalPrice: String
-    let customer: CustomerModel
+    let customer: CustomerModel?
     let currentTotalDiscounts: String
     let totalDiscounts: String
     let appliedDiscount: AppliedDiscount?

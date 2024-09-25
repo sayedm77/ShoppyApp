@@ -25,6 +25,9 @@
                                         <rightBarButtonItems>
                                             <barButtonItem image="gearshape.fill" catalog="system" id="AhB-0K-31W">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <segue destination="8OI-YN-AiY" kind="show" id="dRi-ix-Mb0"/>
+                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem image="bag" catalog="system" id="cb3-zw-Y8e">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,6 +73,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="JbV-uQ-D8E"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="SPX-LC-jUI"/>
+                                </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bkl-tz-2cx">
                                 <rect key="frame" x="16" y="596" width="361" height="219"/>
@@ -224,7 +231,17 @@
                 <viewControllerPlaceholder storyboardName="Cart" id="liE-qQ-mSH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtE-RV-Hff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576" y="-270"/>
+            <point key="canvasLocation" x="686" y="-271"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="gqS-sh-F7f">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="8OI-YN-AiY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IvM-ap-0EK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5we-SF-Itf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="-147"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="u9U-GZ-EHI">

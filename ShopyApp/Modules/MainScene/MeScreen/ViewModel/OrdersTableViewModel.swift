@@ -38,10 +38,12 @@ class OrdersTableViewModel {
     
     func getAllData(customerId : Int)->[Order]{
        
-        self.customerItems = self.result?.orders.filter{
-            $0.customer.id == customerId
-         } ?? []
-      
+        self.customerItems = self.result?.orders.filter {
+            guard let customer  = $0.customer else {return false}
+
+          return customer.id == customerId
+        } ?? []
+        
          return customerItems ?? []
      }
     func getCustomerId()-> Int{

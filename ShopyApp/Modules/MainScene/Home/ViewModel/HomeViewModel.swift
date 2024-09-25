@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeViewModel{
-    
+    var userDefult : Utilities?
     var manager: NetworkManager?
     let reachabilityHandler = ReachabilityManager()
     var bindBrandsResultToViewController : (()->()) = {}
@@ -25,6 +25,7 @@ class HomeViewModel{
     }
     init(){
         manager = NetworkManager.manager
+        self.userDefult = Utilities()
     }
     
     func loadBrandCollectionData(){
@@ -55,5 +56,8 @@ class HomeViewModel{
         reachabilityHandler.checkNetworkReachability { isReachable in
             completion(isReachable)
         }
+    }
+    func isLoggedIn()->Bool{
+        return userDefult?.isLoggedIn() ?? false
     }
 }

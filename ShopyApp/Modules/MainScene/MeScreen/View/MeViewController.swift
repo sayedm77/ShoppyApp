@@ -24,7 +24,6 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        meViewModel = MeViewModel()
         registerCell()
         setupFlowLayout()
     }
@@ -36,7 +35,7 @@ class MeViewController: UIViewController {
                 if self.loggedIn == true{
                     self.greeting.text = "Welcome \(self.customerName ?? "At ShopyApp")"
                     self.notLoggedView.isHidden = true
-                   // self.loadData()
+                    self.loadData()
                     self.loadWishlistData()
                 }else{
                     self.notLoggedView.isHidden = false
@@ -85,7 +84,7 @@ extension MeViewController{
      }
     func registerCell(){
         wishlistCollection.register(UINib(nibName: "ItemsCell", bundle: nil), forCellWithReuseIdentifier: "favCell")
-        ordersTable.register(UINib(nibName: "OrderTableViewCell", bundle: nil),forCellReuseIdentifier: "orderCell")
+        ordersTable.register(UINib(nibName: "OrderTableViewCell", bundle: nil), forCellReuseIdentifier: "orderCell")
     }
     
     func setIndicator(){
@@ -136,12 +135,13 @@ extension MeViewController{
     func display() {
         indicator?.stopAnimating()
         result?.orders = meViewModel.getOrderData( customerId: customerId ?? 0)
+    
         if (result?.orders.count  == 0) {
             ordersTable.setEmptyMessage("No Orders Yet ")
         } else {
             ordersTable.restor()
         }
-        
+  
     }
     func displayWishlist() {
         wishListResult = meViewModel.getFilteredItems(items: meViewModel.getWishlistData())
@@ -158,11 +158,12 @@ extension MeViewController{
 // MARK: - TableView
 extension MeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        result?.orders.count ?? 0
-    }
+        return result?.orders.count ?? 0
+      
+ }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ordersTable.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
         cell.orderNum.text = "Order No\(result?.orders[indexPath.row].id ?? 0 )"
         cell.totalAmount.text = "\(result?.orders[indexPath.row].totalPrice ?? "")\(result?.orders[indexPath.row].currency ?? "")"
         cell.CreatedDate.text = result?.orders[indexPath.row].createdAt.split(separator: "T").first.map(String.init)

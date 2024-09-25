@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="XKv-PH-wiW" customClass="SettingsTableViewCell" customModule="ShopyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XKv-PH-wiW" id="XD7-rc-nNh">
+                <rect key="frame" x="0.0" y="0.0" width="495" height="165"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-ZU-J0I">
+                        <rect key="frame" x="16" y="8" width="60" height="149"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="BGz-oq-22A"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Az-jp-Rks">
+                        <rect key="frame" x="92" y="72" width="367" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1Az-jp-Rks" firstAttribute="leading" secondItem="5L8-ZU-J0I" secondAttribute="trailing" constant="16" id="ESM-td-hWI"/>
+                    <constraint firstItem="5L8-ZU-J0I" firstAttribute="leading" secondItem="XD7-rc-nNh" secondAttribute="leading" constant="16" id="Qrj-ue-txN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Az-jp-Rks" secondAttribute="trailing" constant="16" id="Rqy-vm-xvH"/>
+                    <constraint firstAttribute="bottom" secondItem="5L8-ZU-J0I" secondAttribute="bottom" constant="8" id="ddc-JI-2jW"/>
+                    <constraint firstItem="1Az-jp-Rks" firstAttribute="centerY" secondItem="5L8-ZU-J0I" secondAttribute="centerY" id="xEf-yt-klf"/>
+                    <constraint firstItem="5L8-ZU-J0I" firstAttribute="top" secondItem="XD7-rc-nNh" secondAttribute="top" constant="8" id="ydJ-JB-AvR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="cJq-Sk-qgR"/>
+            <connections>
+                <outlet property="settingIcon" destination="5L8-ZU-J0I" id="dmM-04-55g"/>
+                <outlet property="settingLabel" destination="1Az-jp-Rks" id="AUL-7R-i51"/>
+            </connections>
+            <point key="canvasLocation" x="263.35877862595419" y="31.338028169014088"/>
+        </tableViewCell>
+    </objects>
+</document>

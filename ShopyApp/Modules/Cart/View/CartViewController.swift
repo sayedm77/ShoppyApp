@@ -78,12 +78,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if cartProducts?.count == 0{
-//            tableView.setEmptyView(title: "No products here yet", message: "Go ahead an add some products!")
-//        }
-//        else {
-//            tableView.restore()
-//        }
+        if cartProducts?.count == 0{
+            tableView.setEmptyView(title: "No products here yet", message: "Go ahead an add some products!")
+        }
+        else {
+            tableView.restore()
+        }
         return cartProducts?.count ?? 0
     }
     

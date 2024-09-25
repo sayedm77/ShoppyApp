@@ -40,7 +40,7 @@ class BrandsViewModel{
     
     
     func sortByPrice() {
-        sortedProducts = filteredResult?.sorted {Double($0.variants.first?.price ?? "0.0") ?? 0.0  < Double($1.variants.first?.price ?? "0.0")  ?? 0.0 }
+        filteredResult = filteredResult?.sorted {Double($0.variants.first?.price ?? "0.0") ?? 0.0  < Double($1.variants.first?.price ?? "0.0")  ?? 0.0 }
         }
 
       // Get all products for a specific vendor

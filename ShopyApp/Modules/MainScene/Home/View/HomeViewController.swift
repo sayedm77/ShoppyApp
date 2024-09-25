@@ -18,13 +18,14 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setIndicator()
-        
+        definesPresentationContext = true
     }
     override func viewWillAppear(_ animated: Bool) {
         registerCells()
         setupCollectionView()
         setupCollectionView2()
         loadData()
+        loggedIn = viewModel.isLoggedIn()
     }
     func registerCells (){
         adsCollection.register(UINib(nibName: "AdsCell", bundle: .main), forCellWithReuseIdentifier: "AdCell")

@@ -52,7 +52,7 @@ class MeViewModel {
             guard let customer  = $0.customer else {return false}
 
           return customer.id == customerId
-        } ?? []
+        }
         
         return customerItems ?? []
     }

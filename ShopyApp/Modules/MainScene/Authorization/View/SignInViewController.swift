@@ -52,7 +52,7 @@ class SignInViewController: UIViewController {
                 
                 print("customers in sign in screen :\n")
                 print(self?.signInViewModel?.getAllCustomers()?[0].email ?? "")
-                guard let customers = self?.signInViewModel?.getAllCustomers() else {
+                guard (self?.signInViewModel?.getAllCustomers()) != nil else {
                     print ("failed to get customers")
                     return
                 }

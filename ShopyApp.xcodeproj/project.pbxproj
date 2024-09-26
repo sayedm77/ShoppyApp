@@ -42,6 +42,8 @@
 		3B1C840F2C887D910019278A /* ShopyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C840E2C887D910019278A /* ShopyAppUITestsLaunchTests.swift */; };
 		3B1C84282C88A6730019278A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C84272C88A6730019278A /* HomeViewModel.swift */; };
 		3B1C842A2C88A6C40019278A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C84292C88A6C40019278A /* HomeViewController.swift */; };
+		3B27F51F2CA581B4008B6DFA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27F51E2CA581B4008B6DFA /* AboutViewController.swift */; };
+		3B27F5212CA58CEF008B6DFA /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27F5202CA58CEF008B6DFA /* CurrencyTableViewCell.swift */; };
 		3B341B402CA49CAE00219EA0 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B341B3F2CA49CAE00219EA0 /* Settings.storyboard */; };
 		3B341B432CA49DA800219EA0 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B341B422CA49DA800219EA0 /* SettingsTableViewCell.xib */; };
 		3B341B442CA49DA800219EA0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B341B412CA49DA800219EA0 /* SettingsTableViewCell.swift */; };
@@ -170,6 +172,8 @@
 		3B1C840E2C887D910019278A /* ShopyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3B1C84272C88A6730019278A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3B1C84292C88A6C40019278A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3B27F51E2CA581B4008B6DFA /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		3B27F5202CA58CEF008B6DFA /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		3B341B3F2CA49CAE00219EA0 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		3B341B412CA49DA800219EA0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3B341B422CA49DA800219EA0 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
@@ -648,6 +652,8 @@
 			children = (
 				3B341B452CA4A0F000219EA0 /* SettingsViewController.swift */,
 				3B341B472CA4A16700219EA0 /* CurrencyViewController.swift */,
+				3B27F5202CA58CEF008B6DFA /* CurrencyTableViewCell.swift */,
+				3B27F51E2CA581B4008B6DFA /* AboutViewController.swift */,
 				3B341B3E2CA49A0800219EA0 /* StoryBoard */,
 			);
 			path = View;
@@ -1261,6 +1267,7 @@
 				3B15B7AF2C98CA22002271E8 /* OrdersTableViewController.swift in Sources */,
 				3B5C43DB2C9AD6B3000A417B /* ReviewTableViewCell.swift in Sources */,
 				3B341B462CA4A0F000219EA0 /* SettingsViewController.swift in Sources */,
+				3B27F5212CA58CEF008B6DFA /* CurrencyTableViewCell.swift in Sources */,
 				3B1C83EE2C887D8F0019278A /* SceneDelegate.swift in Sources */,
 				3B341B4A2CA4A1C600219EA0 /* SettingsViewModel.swift in Sources */,
 				3B40D8DC2C89DA6E0027EE83 /* API.swift in Sources */,
@@ -1281,6 +1288,7 @@
 				3B40D8D42C89B90E0027EE83 /* Collections.swift in Sources */,
 				3B4B20422C8F226C0090942F /* MainViewController.swift in Sources */,
 				3B4EC77C2C98AE1700039F52 /* DraftOrder.swift in Sources */,
+				3B27F51F2CA581B4008B6DFA /* AboutViewController.swift in Sources */,
 				3BA4AA102C88D4B60070F4EA /* NetworkService.swift in Sources */,
 				3B341B482CA4A16700219EA0 /* CurrencyViewController.swift in Sources */,
 				3B6AF43D2C9198BA00882EDA /* SearchViewController.swift in Sources */,

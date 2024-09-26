@@ -198,7 +198,7 @@ class ProductInfoViewController: UIViewController , UICollectionViewDataSource, 
                     if self.productInfoViewModel.isInLocalWishList(wishList: self.wishList ?? [], productId: self.productInfoViewModel.getProductDetails()?.id ?? 0) == false {
                         self.addToFavButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                         self.wishList?.append(item)
-                        print(self.wishList)
+                        print(self.wishList ?? "")
                         self.productInfoViewModel.updateWishList(wishList: self.wishList)
                         
                         print("added")

@@ -24,7 +24,18 @@ class HomeViewController: UIViewController {
         registerCells()
         setupCollectionView()
         setupCollectionView2()
-        loadData()
+        viewModel.checkNetworkReachability{ isReachable in
+        
+            if isReachable {
+                self.loadData()
+                self.adsCollection.reloadData()
+                self.brandsCollection.reloadData()
+            } else {
+                DispatchQueue.main.async {
+                    self.showConnectionAlert()
+                }
+            }
+        }     
         loggedIn = viewModel.isLoggedIn()
     }
     func registerCells (){
@@ -58,7 +69,17 @@ class HomeViewController: UIViewController {
         self.view.addSubview(indicator!)
         
     }
-    
+    func showConnectionAlert(){
+        let alertController = UIAlertController(title: "No Internet Connection", message: "Check your network and try again", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Retry", style: .cancel) { _ in
+            self.viewWillAppear(true)
+        }
+        
+        alertController.addAction(doneAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     func showCouponAlert(code:String){
         let alertController = UIAlertController(title: "congratulations", message: "click Copy to get your copone", preferredStyle: .alert)
         

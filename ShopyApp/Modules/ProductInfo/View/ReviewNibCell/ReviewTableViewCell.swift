@@ -20,7 +20,7 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        if let save = customerImage {
+        if customerImage != nil {
             customerImage.layer.masksToBounds = false
             customerImage.layer.cornerRadius = (customerImage.frame.height)/12
             customerImage.clipsToBounds = true

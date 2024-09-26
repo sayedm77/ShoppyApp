@@ -138,7 +138,7 @@ class ProductInfoViewModel{
     func getFilteredWishList(items: [[String: Any]]) -> [[String: Any]]{
         var result: [[String: Any]] = []
         for item in items {
-            if let id = item["variant_id"] as? Int {
+            if item["variant_id"] is Int {
                 result.append(item)
             }
         }

@@ -105,7 +105,7 @@ class SignUpViewModel{
                 switch result {
                 case true:
                     
-                    var customerNote: [String: [String: String]] = [
+                    let customerNote: [String: [String: String]] = [
                         "customer": [
                             "note":"\(self.cartDraftId ?? 0),\(self.wishlistDraftId ?? 0)"
                         ]
@@ -157,7 +157,7 @@ class SignUpViewModel{
                 let customerPassword = savedCustomer.tags ?? ""
                 print("1:\(customerPassword)\n")
                 
-                let customerNote = savedCustomer.note ?? "0"
+                _ = savedCustomer.note ?? "0"
                 print("1:\(customerPassword)\n")
                 
                 if id != 0 {
@@ -219,7 +219,7 @@ class SignUpViewModel{
     }
     func addNoteToCustomer( id : Int) {
         
-        var customerNote: [String: [String: String]] = [
+        let customerNote: [String: [String: String]] = [
             "customer": [
                 "note":"\(self.cartDraftId ?? 0),\(self.wishlistDraftId ?? 0)"
             ]
